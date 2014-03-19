@@ -1003,3 +1003,46 @@ Caused by: error.authentication.credentials.bad
 	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
 	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
 	... 29 more
+2014-03-19 17:28:04,843 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 17:28:04 EDT 2014]
+2014-03-19 17:28:04,843 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 17:28:04,843 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 17:28:04 EDT 2014]
+2014-03-19 17:54:10,171 EDT [http-bio-8443-exec-11] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 17:54:10,171 EDT [http-bio-8443-exec-11] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-6-xWJ6Ofecdcj33xHhL1Y0-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 17:54:10,181 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 17:54:10,181 EDT [http-bio-8443-exec-2] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more

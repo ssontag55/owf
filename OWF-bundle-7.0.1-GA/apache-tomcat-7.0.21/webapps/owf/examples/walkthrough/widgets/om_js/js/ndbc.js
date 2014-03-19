@@ -3,7 +3,7 @@
           //live
           //url: 'http://sdf.ndbc.noaa.gov/sos/server.php'
           //cached
-          url: '../xml/sos_ndbc.xml'
+          url: '../oceansmap/xml/sos_ndbc.xml'
           //data is through the contents.offeringList Object[i]
           //look at the bounds bottom and left data
         };

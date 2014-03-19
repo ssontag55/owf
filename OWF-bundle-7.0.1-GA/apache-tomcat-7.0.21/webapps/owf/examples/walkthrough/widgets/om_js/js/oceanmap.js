@@ -196,6 +196,8 @@ var TopbarView = Backbone.View.extend({
 /*for dev
 $('#map').show();
 $('#mainappcontainer').show();*/
+$('#map').show();
+$('#mainappcontainer').show();
 
 $(document).ready(function() {
 
@@ -208,7 +210,7 @@ $(document).ready(function() {
   // will eventually copy this code to the
   // successful login callback
 
-  /*leftpanelView = new LeftpanelView({
+  leftpanelView = new LeftpanelView({
     el: document.getElementById('leftpanel')
   });
 
@@ -240,5 +242,5 @@ $(document).ready(function() {
 
   setTimeout(function() {
     topbarView.toggleleftpanel();
-  }, 500);*/
+  }, 500);
 });

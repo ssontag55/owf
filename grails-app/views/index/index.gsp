@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title id='title'>Ozone Widget Framework</title>
+        <title id='title'>RPS Operations</title>
         
         <link rel="shortcut icon" href="images/favicon.ico" />
         <script language="javascript">

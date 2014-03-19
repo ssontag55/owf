@@ -45,7 +45,7 @@ owf {
     defaultTheme = "a_default"
 
     showAccessAlert = "true"
-    accessAlertMsg = "This is a RPS demo."
+    accessAlertMsg = "This is a RPS demo for internal use only."
 
     // Specifies a freeTextEntryMessage to appear on all dialogs which allow text entry
     // To turn off the warning message, use the following:
