@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" 
+      type="image/png" 
+      href="favicon.ico" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>OceansMap</title>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/leaflet_min.css">
+    <link rel="stylesheet" href="css/c3.css">
+    <link rel="stylesheet" href="css/oceanmap.css">
+  </head>
+  <body>
+    <div id="login">
+      <img src="images/rps.png" style="position:absolute; right:1px" >
+      <div class="main ui raised segment">
+        <div class="ui center aligned large header">
+          <img src="images/login/oceans_map_logo.png" width="90%" style="max-width: 179px;" >
+        
+        </div> 
+        <p style=" text-align: center; ">
+          OceansMap is a met-ocean data system.
+          It consists of a map, a database and web
+          services. The system allows users and groups to
+          manage, visualize and analyze a variety
+          of met-ocean data including operational
+          models and in-situ observation data. <a style="color:#9C2236" href="http://www.asascience.com/about/contact/" target="_blank">Contact us</a> for more information.
+        </p>
+        <div class="ui divider"></div>
+        <div class="ui form">
+          <div class="field">
+            <div class="ui left labled icon input">
+              <input id="username" type="text" placeholder="Username" />
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled icon input">
+              <input id="password" type="password" placeholder="Password" />
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox floated left terms">
+              <input type="checkbox"  style=" z-index; 50;"/>
+              <label  style=" font-size: 12px; ">
+                Agree to
+                <a href="http://asascience.com/agreements/oilmap.shtml" target="_blank">Terms and Conditions</a>
+              </label>
+            </div>
+            <div id="loginbutton" class="ui blue sumbit button floated right disabled">
+              Login
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mainappcontainer">
+      <div id='leftpanel'>
+        <div id="stations">
+          <div class='ui dividing header'>
+            Observation Data
+            <div id="obsinfo" style='position: absolute; right: -10px; margin-top: -25px;' >
+            <i class='info letter icon'  data-html="<h4 style='text-align:center;' class=\'ui header\''> Real Time Data Management</h4><p style='text-align:center;'>RPS provides time data management, ADCP support and leasing for operational use. <p style='text-align:center;'></p>"></i>
+            </div>
+          </div>
+          <div id="stationListMain" class='ui list'></div>
+        </div>
+        <div id="models">
+          <div class='ui dividing header'>
+            Modeled Data
+            <div id="edsinfo" style='position: absolute; right: -10px; margin-top: -25px;' >
+            <i class='info letter icon'  data-html="<h4 style='text-align:center;' class=\'ui header\''> Environmental Data Server (EDS) </h4><p style='text-align:center;'>RPS provides hindcast and forecast models for operational use. <p style='text-align:center;'><img src='images/icon32.png' > </p>"></i>
+            </div>
+          </div>
+          <div id="modelslist" class='ui list'></div>
+        </div>
+        <div id="layerTOC">
+          <div class='ui dividing header' id="listlayers">
+            Layers
+          </div>
+          <div id="layerListMain" class='ui list'></div>
+        </div>
+      </div>
+      <div id='rightcontainer'>
+        <div id='topbar' class='ui fixed menu'>
+          <div id="titlebar" style="float:right; padding-right:295px;">
+          <a href="http://asascience.com/" target="_blank">
+             <img src="images/rps_big.png" height="43" >
+          </a>
+          </div>
+          <div class='container'>
+            <a class='launch item active' style='margin-left: -8px;position: absolute; background-color: #CDD1DC;'>
+              <i class='icon exchange layout'></i>
+              Collapse
+            </a>
+          </div>
+            <div class='timeslider launch item' style=' margin-top: 41px;'>
+              <div id='timeslider'></div>
+            </div>
+            <div id='timesliderlabel' class='ui label inline'>
+              <div class='detail'>Map Time: Now</div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div id="tools" class="ui teal buttons">
+          <div class="ui dropdown selection" id="observs">
+            <input type="hidden" name="Artist">
+            <div class="default text">Show Me ...</div>
+            <i class="list icon"></i>
+            <div class="menu">
+              <div class="item" data-value="winds">Wind</div>
+              <div class="item" data-value="air_temperature">Air Temp</div>
+              <div class="item" data-value="waves">Wave Height</div>
+              <div class="item" data-value="sea_water_temperature">Sea Temp</div>
+              <div class="item" data-value="currents">Water Speed</div>
+              <div class="item" data-value="air_pressure_at_sea_level">Air Pressure</div>
+              <div class="item" data-value="all">Show All</div>
+            </div>
+          </div>
+        </div>
+<!--        <div id='graphs' class="graphs">
+          <div class='clickmap'></div>
+          <div class="txtover">
+            <p>Click on a NDBC Station to view Conditions</p>  
+          </div>
+        </div> -->
+        <div id='graphs' class='graphs'>
+          <div class='ui small tabular menu' style='z-index: 1; background: rgba(157, 165, 187, .5);'>
+            <a class='item active' data-id='winds'>Wind</a>
+            <a class='item' data-id='air_temperature'>Air Temp</a>
+            <a class='item' data-id='waves'>Wave Height</a>
+            <a class='item' data-id='sea_water_temperature'>Sea Temp</a>
+            <a class='item' data-id='currents'>Water Speed</a>
+            <a class='item' data-id='air_pressure_at_sea_level'>Air Pressure</a>
+            <a class='item' data-id='sea_water_salinity'>Water Salinity</a>
+          </div>
+          <div class="ui icon button" style="position: absolute; top: 0px; right: 0px; height: 39px;z-index:5;">
+            <i class="resize vertical icon"></i>
+          </div>
+          <div id="c3graph"></div>
+          <div style='display: none' class='ui active large loader'></div>
+        </div>
+      </div>
+    </div>
+    <!-- libs -->
+<!--    <script src="js/lib/jquery-2.0.3.min.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--    <script src="js/lib/jquery-ui-1.10.4.custom.min.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/lib/semantic.min.js"></script>
+<!--    <script src="js/lib/d3.v3.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="js/lib/leaflet.js"></script>
+    <script src="js/lib/esri-leaflet.js"></script>
+   <!-- <script src="js/lib/draw/leaflet.draw.js"></script>
+   <script src="js/lib/underscore-min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<!--    <script src="js/lib/backbone-min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script src="js/lib/SOS/OpenLayers.js"></script>
+    <script src="js/lib/SOS/SOS.js"></script>
+    <script src="js/lib/SOS/SOS.Ui.js"></script>
+    <script src="js/lib/c3.js"></script>
+    <!-- end libs -->
+    <script src="js/ndbc.js"></script>
+    <script src="js/StationMarker.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/bottomgraph.js"></script>
+    <script src="js/oceanmap.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48872902-1', 'oceansmap.com');
+      ga('send', 'pageview');
+  </script>
+  </body>
+</html>

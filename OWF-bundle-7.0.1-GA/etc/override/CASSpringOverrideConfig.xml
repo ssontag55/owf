@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:sec="http://www.springframework.org/schema/security"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:org/springframework/beans/factory/xml/spring-beans-2.5.xsd   
+         http://www.springframework.org/schema/security classpath:org/springframework/security/config/spring-security-2.0.1.xsd">
+    
+
+	<!-- 
+		This file must sit somewhere on the classpath. When Marketplace is loaded,
+		it is merged with the default configuration file. Beans with the same name
+		will be overriden; that is to say that every bean in here will override
+		the default values in Marketplace. Comment out the ones you don't want!
+	 -->
+	 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="order">
+		<value>1</value>
+	    </property>
+	    <property name="ignoreUnresolvablePlaceholders">
+		<value>true</value>
+	    </property>
+              <property name="locations">
+		<value>classpath*:OzoneConfig.properties</value>
+	    </property>
+              <property name="properties">  
+	       <props>  
+	          <prop key="ozone.host">localhost</prop>  
+	          <prop key="ozone.port">8443</prop>  
+	          <prop key="ozone.cas.serverLoginLocation">cas/login</prop>
+	       </props>  
+	  </property>  	    
+	</bean>
+
+	
+	<bean id="openIdProviderController" class="org.jasig.cas.web.OpenIdProviderController" >
+		<property name="loginUrl" value="https://${ozone.host}:${ozone.port}/${ozone.cas.serverLoginLocation}" />
+	</bean>
+		
+
+	<bean id="authenticationManager"
+		class="org.jasig.cas.authentication.AuthenticationManagerImpl">
+		<!--
+			| This is the List of CredentialToPrincipalResolvers that identify what Principal is trying to authenticate.
+			| The AuthenticationManagerImpl considers them in order, finding a CredentialToPrincipalResolver which 
+			| supports the presented credentials.
+			|
+			| AuthenticationManagerImpl uses these resolvers for two purposes.  First, it uses them to identify the Principal
+			| attempting to authenticate to CAS /login .  In the default configuration, it is the DefaultCredentialsToPrincipalResolver
+			| that fills this role.  If you are using some other kind of credentials than UsernamePasswordCredentials, you will need to replace
+			| DefaultCredentialsToPrincipalResolver with a CredentialsToPrincipalResolver that supports the credentials you are
+			| using.
+			|
+			| Second, AuthenticationManagerImpl uses these resolvers to identify a service requesting a proxy granting ticket. 
+			| In the default configuration, it is the HttpBasedServiceCredentialsToPrincipalResolver that serves this purpose. 
+			| You will need to change this list if you are identifying services by something more or other than their callback URL.
+			+-->
+		<property name="credentialsToPrincipalResolvers">
+			<list>
+				<!--
+					| UsernamePasswordCredentialsToPrincipalResolver supports the UsernamePasswordCredentials that we use for /login 
+					| by default and produces SimplePrincipal instances conveying the username from the credentials.
+					| 
+					| If you've changed your LoginFormAction to use credentials other than UsernamePasswordCredentials then you will also
+					| need to change this bean declaration (or add additional declarations) to declare a CredentialsToPrincipalResolver that supports the
+					| Credentials you are using.
+					+-->
+				<bean
+					class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver" />
+				<!--
+					| HttpBasedServiceCredentialsToPrincipalResolver supports HttpBasedCredentials.  It supports the CAS 2.0 approach of
+					| authenticating services by SSL callback, extracting the callback URL from the Credentials and representing it as a
+					| SimpleService identified by that callback URL.
+					|
+					| If you are representing services by something more or other than an HTTPS URL whereat they are able to
+					| receive a proxy callback, you will need to change this bean declaration (or add additional declarations).
+					+-->
+				<bean
+					class="org.jasig.cas.authentication.principal.HttpBasedServiceCredentialsToPrincipalResolver" />
+			</list>
+		</property>
+
+		<!--
+			| Whereas CredentialsToPrincipalResolvers identify who it is some Credentials might authenticate, 
+			| AuthenticationHandlers actually authenticate credentials.  Here we declare the AuthenticationHandlers that
+			| authenticate the Principals that the CredentialsToPrincipalResolvers identified.  CAS will try these handlers in turn
+			| until it finds one that both supports the Credentials presented and succeeds in authenticating.
+			+-->
+		<property name="authenticationHandlers">
+			<list>
+				<!--
+					| This is the authentication handler that authenticates services by means of callback via SSL, thereby validating
+					| a server side SSL certificate.
+					+-->
+				<bean class="org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler">
+					<property name="httpClient" ref="httpClient"/>
+				</bean>
+				<!--
+					| This is the authentication handler declaration that every CAS deployer will need to change before deploying CAS 
+					| into production.  The default SimpleTestUsernamePasswordAuthenticationHandler authenticates UsernamePasswordCredentials
+					| where the username equals the password.  You will need to replace this with an AuthenticationHandler that implements your
+					| local authentication strategy.  You might accomplish this by coding a new such handler and declaring
+					| edu.someschool.its.cas.MySpecialHandler here, or you might use one of the handlers provided in the adaptors modules.
+					+-->
+				<!--<bean class="org.jasig.cas.adaptors.generic.AcceptUsersAuthenticationHandler">-->
+    					<!--<property name="users">-->
+       						<!--<map>-->
+          					<!--<entry key="testUser1" value="password" />-->
+          					<!--<entry key="testUser2" value="password" />-->
+          					<!--<entry key="testAdmin1" value="password" />-->
+       						<!--</map>-->
+    					<!--</property>-->
+				<!--</bean>-->
+
+                <!--
+                    | This is the simple authentication handler which reads users from the classpath using the 'propertyFileName'.
+                    | The file is of the form <username>=<password>, <any other attributes are ignored>
+                    |
+                    | You will need to replace this with an AuthenticationHandler that implements your
+					| local authentication strategy.  You might accomplish this by coding a new such handler and declaring
+					| edu.someschool.its.cas.MySpecialHandler here, or you might use one of the handlers provided in the adaptors modules.
+                    +-->
+                <bean class="ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler">
+                        <property name="propertyFileName" value="/users.properties"/>
+                </bean>
+			</list>
+		</property>
+	</bean>
+
+	
+</beans>

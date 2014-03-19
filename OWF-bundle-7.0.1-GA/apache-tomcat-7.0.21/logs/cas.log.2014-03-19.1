@@ -1,0 +1,1005 @@
+2014-03-19 11:07:35,752 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization started
+2014-03-19 11:07:35,784 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@5cfee4ef: display name [Root WebApplicationContext]; startup date [Wed Mar 19 11:07:35 EDT 2014]; root of context hierarchy
+2014-03-19 11:07:35,868 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketRegistry.xml]
+2014-03-19 11:07:36,110 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketGrantingTicketCookieGenerator.xml]
+2014-03-19 11:07:36,159 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/propertyFileConfigurer.xml]
+2014-03-19 11:07:36,175 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/uniqueIdGenerators.xml]
+2014-03-19 11:07:36,209 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/warnCookieGenerator.xml]
+2014-03-19 11:07:36,314 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketExpirationPolicies.xml]
+2014-03-19 11:07:36,350 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/applicationContext.xml]
+2014-03-19 11:07:36,367 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/securityContext.xml]
+2014-03-19 11:07:36,491 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/argumentExtractorsConfiguration.xml]
+2014-03-19 11:07:36,512 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/deployerConfigContext.xml]
+2014-03-19 11:07:36,677 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@5cfee4ef]: org.springframework.beans.factory.support.DefaultListableBeanFactory@3b5d0d58
+2014-03-19 11:07:36,762 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 11:07:36,813 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3b5d0d58: defining beans [ticketRegistry,ticketRegistryCleaner,jobDetailTicketRegistryCleaner,triggerJobDetailTicketRegistryCleaner,scheduler,ticketGrantingTicketCookieGenerator,propertyPlaceholderConfigurer,ticketGrantingTicketUniqueIdGenerator,serviceTicketUniqueIdGenerator,proxy20TicketUniqueIdGenerator,samlServiceTicketUniqueIdGenerator,uniqueIdGeneratorsMap,warnCookieGenerator,serviceTicketExpirationPolicy,grantingTicketExpirationPolicy,messageSource,servicesManager,httpClient,persistentIdGenerator,centralAuthenticationService,proxy10Handler,proxy20Handler,advisorAutoProxyCreator,validationAnnotationBeanPostProcessor,_authenticationManager,_filterChainProxy,_httpSessionContextIntegrationFilter,_filterChainProxyPostProcessor,_filterChainList,_securityContextHolderAwareRequestFilter,_accessManager,_portMapper,_exceptionTranslationFilter,_filterSecurityInterceptor,_sessionFixationProtectionFilter,_logoutFilter,_entryPointInjectionBeanPostProcessor,_userServiceInjectionPostProcessor,serviceProperties,casProcessingFilter,casProcessingFilterEntryPoint,casAuthenticationProvider,casArgumentExtractor,samlArgumentExtractor,argumentExtractors,authenticationManager,userDetailsService,attributeRepository,serviceRegistryDao]; root of factory hierarchy
+2014-03-19 11:07:36,921 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Quartz Scheduler v.1.5.2 created.
+2014-03-19 11:07:36,922 EDT [Thread-2] INFO [org.quartz.simpl.RAMJobStore]: RAMJobStore initialized.
+2014-03-19 11:07:36,922 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2014-03-19 11:07:36,922 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler version: 1.5.2
+2014-03-19 11:07:36,924 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@218ddd60
+2014-03-19 11:07:36,925 EDT [Thread-2] INFO [org.springframework.scheduling.quartz.SchedulerFactoryBean]: Starting Quartz Scheduler now
+2014-03-19 11:07:36,925 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Scheduler scheduler_$_NON_CLUSTERED started.
+2014-03-19 11:07:37,115 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Selecting AuthenticationEntryPoint for use in ExceptionTranslationFilter
+2014-03-19 11:07:37,118 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using main configured AuthenticationEntryPoint.
+2014-03-19 11:07:37,118 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using bean 'org.springframework.security.ui.cas.CasProcessingFilterEntryPoint@7487131c' as the entry point.
+2014-03-19 11:07:37,139 EDT [Thread-2] INFO [org.springframework.security.intercept.AbstractSecurityInterceptor]: Validated configuration attributes
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Checking sorted filter chain: [org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], OrderedFilterDecorator[ delegate=org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]; order=601], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@6f6281e8]
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Filter chain...
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [0] - org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ]
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [1] - org.springframework.security.ui.logout.LogoutFilter[ order=300; ]
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [2] - org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [3] - org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ]
+2014-03-19 11:07:37,170 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [4] - org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ]
+2014-03-19 11:07:37,180 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [5] - org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ]
+2014-03-19 11:07:37,180 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [6] - org.springframework.security.intercept.web.FilterSecurityInterceptor@6f6281e8
+2014-03-19 11:07:37,184 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: FilterChainProxy: FilterChainProxy[ UrlMatcher = org.springframework.security.util.AntUrlPathMatcher[requiresLowerCase='true']; Filter Chains: {/**=[org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@6f6281e8]}]
+2014-03-19 11:07:37,205 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 1452 ms
+2014-03-19 11:07:37,238 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization started
+2014-03-19 11:07:37,239 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@3595df92: display name [WebApplicationContext for namespace 'cas-servlet']; startup date [Wed Mar 19 11:07:37 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@5cfee4ef
+2014-03-19 11:07:37,239 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/cas-servlet.xml]
+2014-03-19 11:07:37,279 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@3595df92]: org.springframework.beans.factory.support.DefaultListableBeanFactory@6c8ccffb
+2014-03-19 11:07:37,308 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 11:07:37,313 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c8ccffb: defining beans [casPropertyPlaceholderConfigurer2,themeResolver,viewResolver,localeResolver,localeChangeInterceptor,urlBasedViewResolver,errorHandlerResolver,handlerMappingB,handlerMappingC,openIdProviderController,serviceLogoutViewController,loginController,flowExecutor,flowRegistry,proxyValidateController,serviceValidateController,samlValidateController,legacyValidateController,proxyController,logoutController,initialFlowSetupAction,authenticationViaFormAction,generateServiceTicketAction,sendTicketGrantingTicketAction,dynamicRedirectViewSelector,addRegisteredServiceSimpleFormController,editRegisteredServiceSimpleFormController,registeredServiceValidator,manageRegisteredServicesMultiActionController]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@3b5d0d58
+2014-03-19 11:07:37,625 EDT [Thread-2] INFO [org.jasig.cas.web.flow.AuthenticationViaFormAction]: FormObjectClass not set.  Using default class of org.jasig.cas.authentication.principal.UsernamePasswordCredentials with formObjectName credentials and validator org.jasig.cas.validation.UsernamePasswordCredentialsValidator.
+2014-03-19 11:07:37,652 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization completed in 414 ms
+2014-03-19 11:07:56,920 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 11:07:56 EDT 2014]
+2014-03-19 11:07:56,920 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 11:07:56,920 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 11:07:56 EDT 2014]
+2014-03-19 11:08:23,441 EDT [http-bio-8443-exec-8] INFO [org.springframework.context.support.GenericApplicationContext]: Refreshing org.springframework.context.support.GenericApplicationContext@24d8ae83: display name [org.springframework.context.support.GenericApplicationContext@24d8ae83]; startup date [Wed Mar 19 11:08:23 EDT 2014]; root of context hierarchy
+2014-03-19 11:08:23,441 EDT [http-bio-8443-exec-8] INFO [org.springframework.context.support.GenericApplicationContext]: Bean factory for application context [org.springframework.context.support.GenericApplicationContext@24d8ae83]: org.springframework.beans.factory.support.DefaultListableBeanFactory@da92d5b
+2014-03-19 11:08:23,442 EDT [http-bio-8443-exec-8] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@da92d5b: defining beans []; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@6c8ccffb
+2014-03-19 11:08:23,509 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.web.flow.InitialFlowSetupAction]: Setting path for cookies to: /cas
+2014-03-19 11:08:23,642 EDT [http-bio-8443-exec-8] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Refreshing org.springframework.web.context.support.GenericWebApplicationContext@319b01f4: display name [org.springframework.web.context.support.GenericWebApplicationContext@319b01f4]; startup date [Wed Mar 19 11:08:23 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@3595df92
+2014-03-19 11:08:23,642 EDT [http-bio-8443-exec-8] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.GenericWebApplicationContext@319b01f4]: org.springframework.beans.factory.support.DefaultListableBeanFactory@3983efa2
+2014-03-19 11:08:23,647 EDT [http-bio-8443-exec-8] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3983efa2: defining beans [viewServiceErrorView,manageServiceView,serviceErrorView,serviceLogoutView,casLoginView,casLoginConfirmView,casLoginGenericSuccessView,casLogoutView,editServiceView,viewServiceSsoErrorView,addServiceView,casProxyFailureView,cas1ServiceSuccessView,casServiceFailureView,casOpenIdServiceFailureView,casProxySuccessView,casSamlServiceFailureView,cas1ServiceFailureView,casOpenIdServiceSuccessView,postResponseView,openIdProviderView,casServiceSuccessView,casSamlServiceSuccessView]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@6c8ccffb
+2014-03-19 11:10:02,284 EDT [http-bio-8443-exec-10] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 11:10:02,288 EDT [http-bio-8443-exec-10] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-1-4a9MRetp2A3HsiNLDDyu-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 11:10:03,153 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 11:10:03,155 EDT [http-bio-8443-exec-3] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 11:49:00,330 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 11:49:00,331 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-2-gQ05BIV0MearcaRwC0l7-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 11:49:00,344 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 11:49:00,344 EDT [http-bio-8443-exec-2] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 11:50:59,844 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 11:50:59,845 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-3-mGVHaJkT4nukAhEQVqw3-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 11:50:59,863 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 11:50:59,863 EDT [http-bio-8443-exec-3] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 11:54:39,048 EDT [http-bio-8443-exec-4] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 11:54:39,048 EDT [http-bio-8443-exec-4] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-4-u027gL9KNdUasFUM6BqS-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 11:54:39,059 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 11:54:39,059 EDT [http-bio-8443-exec-1] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 11:56:13,843 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 11:56:13,843 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-5-ZskQPRq9T9k0PpD9C7Bl-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 11:56:13,854 EDT [http-bio-8443-exec-9] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 11:56:13,854 EDT [http-bio-8443-exec-9] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 12:31:16,890 EDT [scheduler_Worker-5] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 12:31:16 EDT 2014]
+2014-03-19 12:31:16,891 EDT [scheduler_Worker-5] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 12:31:16,891 EDT [scheduler_Worker-5] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 12:31:16 EDT 2014]
+2014-03-19 13:22:58,554 EDT [http-bio-8443-exec-5] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-6-u5qvNVbfqJzEvHbT0Lxc-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:58,556 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-7-qZ4DI4d1gVPbH1Cte3gY-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:58,568 EDT [http-bio-8443-exec-7] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-9-s1tmHHqLUJCGImQwflHV-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:58,568 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-8-fliberh7LotrdiABdeak-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:58,571 EDT [http-bio-8443-exec-10] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-10-2GHRnbD4aPcdG7j5Urim-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:58,572 EDT [http-bio-8443-exec-4] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-11-rqqldQmB3fHEBorH0Wzn-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 13:22:59,181 EDT [http-bio-8443-exec-11] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,182 EDT [http-bio-8443-exec-11] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:22:59,189 EDT [http-bio-8443-exec-7] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,189 EDT [http-bio-8443-exec-7] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:22:59,191 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,191 EDT [http-bio-8443-exec-1] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:22:59,198 EDT [http-bio-8443-exec-13] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,198 EDT [http-bio-8443-exec-13] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:22:59,204 EDT [http-bio-8443-exec-12] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,204 EDT [http-bio-8443-exec-12] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:22:59,206 EDT [http-bio-8443-exec-6] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 13:22:59,206 EDT [http-bio-8443-exec-6] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 13:54:36,887 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 13:54:36 EDT 2014]
+2014-03-19 13:54:36,887 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 13:54:36,887 EDT [scheduler_Worker-4] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 13:54:36 EDT 2014]
+2014-03-19 14:14:46,599 EDT [http-bio-8443-exec-18] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-12-qgpfeaPPz7cVnEKZYMfO-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:14:46,657 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:14:46,657 EDT [http-bio-8443-exec-8] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 14:15:06,294 EDT [http-bio-8443-exec-5] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 14:15:06,294 EDT [http-bio-8443-exec-5] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-13-d0blaIGGMXhiie5VvTE9-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:15:06,306 EDT [http-bio-8443-exec-17] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:15:06,306 EDT [http-bio-8443-exec-17] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 14:18:25,871 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 14:18:25,871 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-14-0uVR4kS9o5rbfKBxCGal-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:18:25,884 EDT [http-bio-8443-exec-18] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:18:25,884 EDT [http-bio-8443-exec-18] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 14:30:52,447 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 14:30:52,447 EDT [http-bio-8443-exec-2] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-15-gbvccrwV5dTH3EYbuWhv-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:30:52,474 EDT [http-bio-8443-exec-1] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:30:52,474 EDT [http-bio-8443-exec-1] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 14:34:01,758 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization started
+2014-03-19 14:34:01,787 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@793df1ff: display name [Root WebApplicationContext]; startup date [Wed Mar 19 14:34:01 EDT 2014]; root of context hierarchy
+2014-03-19 14:34:01,842 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketRegistry.xml]
+2014-03-19 14:34:01,993 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketGrantingTicketCookieGenerator.xml]
+2014-03-19 14:34:02,029 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/propertyFileConfigurer.xml]
+2014-03-19 14:34:02,061 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/uniqueIdGenerators.xml]
+2014-03-19 14:34:02,101 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/warnCookieGenerator.xml]
+2014-03-19 14:34:02,246 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketExpirationPolicies.xml]
+2014-03-19 14:34:02,282 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/applicationContext.xml]
+2014-03-19 14:34:02,310 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/securityContext.xml]
+2014-03-19 14:34:02,601 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/argumentExtractorsConfiguration.xml]
+2014-03-19 14:34:02,620 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/deployerConfigContext.xml]
+2014-03-19 14:34:02,669 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@793df1ff]: org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d
+2014-03-19 14:34:02,754 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 14:34:02,809 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d: defining beans [ticketRegistry,ticketRegistryCleaner,jobDetailTicketRegistryCleaner,triggerJobDetailTicketRegistryCleaner,scheduler,ticketGrantingTicketCookieGenerator,propertyPlaceholderConfigurer,ticketGrantingTicketUniqueIdGenerator,serviceTicketUniqueIdGenerator,proxy20TicketUniqueIdGenerator,samlServiceTicketUniqueIdGenerator,uniqueIdGeneratorsMap,warnCookieGenerator,serviceTicketExpirationPolicy,grantingTicketExpirationPolicy,messageSource,servicesManager,httpClient,persistentIdGenerator,centralAuthenticationService,proxy10Handler,proxy20Handler,advisorAutoProxyCreator,validationAnnotationBeanPostProcessor,_authenticationManager,_filterChainProxy,_httpSessionContextIntegrationFilter,_filterChainProxyPostProcessor,_filterChainList,_securityContextHolderAwareRequestFilter,_accessManager,_portMapper,_exceptionTranslationFilter,_filterSecurityInterceptor,_sessionFixationProtectionFilter,_logoutFilter,_entryPointInjectionBeanPostProcessor,_userServiceInjectionPostProcessor,serviceProperties,casProcessingFilter,casProcessingFilterEntryPoint,casAuthenticationProvider,casArgumentExtractor,samlArgumentExtractor,argumentExtractors,authenticationManager,userDetailsService,attributeRepository,serviceRegistryDao]; root of factory hierarchy
+2014-03-19 14:34:02,903 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Quartz Scheduler v.1.5.2 created.
+2014-03-19 14:34:02,905 EDT [Thread-2] INFO [org.quartz.simpl.RAMJobStore]: RAMJobStore initialized.
+2014-03-19 14:34:02,905 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2014-03-19 14:34:02,905 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler version: 1.5.2
+2014-03-19 14:34:02,906 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@672e34d8
+2014-03-19 14:34:02,907 EDT [Thread-2] INFO [org.springframework.scheduling.quartz.SchedulerFactoryBean]: Starting Quartz Scheduler now
+2014-03-19 14:34:02,907 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Scheduler scheduler_$_NON_CLUSTERED started.
+2014-03-19 14:34:03,080 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Selecting AuthenticationEntryPoint for use in ExceptionTranslationFilter
+2014-03-19 14:34:03,083 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using main configured AuthenticationEntryPoint.
+2014-03-19 14:34:03,083 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using bean 'org.springframework.security.ui.cas.CasProcessingFilterEntryPoint@9c80432' as the entry point.
+2014-03-19 14:34:03,100 EDT [Thread-2] INFO [org.springframework.security.intercept.AbstractSecurityInterceptor]: Validated configuration attributes
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Checking sorted filter chain: [org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], OrderedFilterDecorator[ delegate=org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]; order=601], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@63e772c0]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Filter chain...
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [0] - org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [1] - org.springframework.security.ui.logout.LogoutFilter[ order=300; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [2] - org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [3] - org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [4] - org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [5] - org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ]
+2014-03-19 14:34:03,129 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [6] - org.springframework.security.intercept.web.FilterSecurityInterceptor@63e772c0
+2014-03-19 14:34:03,132 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: FilterChainProxy: FilterChainProxy[ UrlMatcher = org.springframework.security.util.AntUrlPathMatcher[requiresLowerCase='true']; Filter Chains: {/**=[org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@63e772c0]}]
+2014-03-19 14:34:03,154 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 1396 ms
+2014-03-19 14:34:03,183 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization started
+2014-03-19 14:34:03,183 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@7a064930: display name [WebApplicationContext for namespace 'cas-servlet']; startup date [Wed Mar 19 14:34:03 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@793df1ff
+2014-03-19 14:34:03,183 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/cas-servlet.xml]
+2014-03-19 14:34:03,224 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@7a064930]: org.springframework.beans.factory.support.DefaultListableBeanFactory@5557f57e
+2014-03-19 14:34:03,253 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 14:34:03,257 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5557f57e: defining beans [casPropertyPlaceholderConfigurer2,themeResolver,viewResolver,localeResolver,localeChangeInterceptor,urlBasedViewResolver,errorHandlerResolver,handlerMappingB,handlerMappingC,openIdProviderController,serviceLogoutViewController,loginController,flowExecutor,flowRegistry,proxyValidateController,serviceValidateController,samlValidateController,legacyValidateController,proxyController,logoutController,initialFlowSetupAction,authenticationViaFormAction,generateServiceTicketAction,sendTicketGrantingTicketAction,dynamicRedirectViewSelector,addRegisteredServiceSimpleFormController,editRegisteredServiceSimpleFormController,registeredServiceValidator,manageRegisteredServicesMultiActionController]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d
+2014-03-19 14:34:03,594 EDT [Thread-2] INFO [org.jasig.cas.web.flow.AuthenticationViaFormAction]: FormObjectClass not set.  Using default class of org.jasig.cas.authentication.principal.UsernamePasswordCredentials with formObjectName credentials and validator org.jasig.cas.validation.UsernamePasswordCredentialsValidator.
+2014-03-19 14:34:03,620 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization completed in 437 ms
+2014-03-19 14:34:22,889 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 14:34:22 EDT 2014]
+2014-03-19 14:34:22,889 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 14:34:22,889 EDT [scheduler_Worker-1] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 14:34:22 EDT 2014]
+2014-03-19 14:37:35,299 EDT [http-bio-8443-exec-18] INFO [org.springframework.context.support.GenericApplicationContext]: Refreshing org.springframework.context.support.GenericApplicationContext@1c8fbae4: display name [org.springframework.context.support.GenericApplicationContext@1c8fbae4]; startup date [Wed Mar 19 14:37:35 EDT 2014]; root of context hierarchy
+2014-03-19 14:37:35,299 EDT [http-bio-8443-exec-18] INFO [org.springframework.context.support.GenericApplicationContext]: Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1c8fbae4]: org.springframework.beans.factory.support.DefaultListableBeanFactory@2036dd62
+2014-03-19 14:37:35,299 EDT [http-bio-8443-exec-18] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2036dd62: defining beans []; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@5557f57e
+2014-03-19 14:37:35,376 EDT [http-bio-8443-exec-18] INFO [org.jasig.cas.web.flow.InitialFlowSetupAction]: Setting path for cookies to: /cas
+2014-03-19 14:37:35,449 EDT [http-bio-8443-exec-18] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3a9f096b: display name [org.springframework.web.context.support.GenericWebApplicationContext@3a9f096b]; startup date [Wed Mar 19 14:37:35 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@7a064930
+2014-03-19 14:37:35,449 EDT [http-bio-8443-exec-18] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.GenericWebApplicationContext@3a9f096b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@66546a6d
+2014-03-19 14:37:35,454 EDT [http-bio-8443-exec-18] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@66546a6d: defining beans [viewServiceErrorView,manageServiceView,serviceErrorView,serviceLogoutView,casLoginView,casLoginConfirmView,casLoginGenericSuccessView,casLogoutView,editServiceView,viewServiceSsoErrorView,addServiceView,casProxyFailureView,cas1ServiceSuccessView,casServiceFailureView,casOpenIdServiceFailureView,casProxySuccessView,casSamlServiceFailureView,cas1ServiceFailureView,casOpenIdServiceSuccessView,postResponseView,openIdProviderView,casServiceSuccessView,casSamlServiceSuccessView]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@5557f57e
+2014-03-19 14:37:45,300 EDT [http-bio-8443-exec-16] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 14:37:45,304 EDT [http-bio-8443-exec-16] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-1-GrTMbqZ50XRhM69LuRyY-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:37:45,540 EDT [http-bio-8443-exec-17] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:37:45,541 EDT [http-bio-8443-exec-17] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 14:41:03,809 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization started
+2014-03-19 14:41:03,837 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@793df1ff: display name [Root WebApplicationContext]; startup date [Wed Mar 19 14:41:03 EDT 2014]; root of context hierarchy
+2014-03-19 14:41:03,888 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketRegistry.xml]
+2014-03-19 14:41:04,004 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketGrantingTicketCookieGenerator.xml]
+2014-03-19 14:41:04,032 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/propertyFileConfigurer.xml]
+2014-03-19 14:41:04,064 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/uniqueIdGenerators.xml]
+2014-03-19 14:41:04,212 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/warnCookieGenerator.xml]
+2014-03-19 14:41:04,243 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/ticketExpirationPolicies.xml]
+2014-03-19 14:41:04,372 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/applicationContext.xml]
+2014-03-19 14:41:04,394 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/securityContext.xml]
+2014-03-19 14:41:04,544 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-configuration/argumentExtractorsConfiguration.xml]
+2014-03-19 14:41:04,560 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/deployerConfigContext.xml]
+2014-03-19 14:41:04,590 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@793df1ff]: org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d
+2014-03-19 14:41:04,685 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 14:41:04,737 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d: defining beans [ticketRegistry,ticketRegistryCleaner,jobDetailTicketRegistryCleaner,triggerJobDetailTicketRegistryCleaner,scheduler,ticketGrantingTicketCookieGenerator,propertyPlaceholderConfigurer,ticketGrantingTicketUniqueIdGenerator,serviceTicketUniqueIdGenerator,proxy20TicketUniqueIdGenerator,samlServiceTicketUniqueIdGenerator,uniqueIdGeneratorsMap,warnCookieGenerator,serviceTicketExpirationPolicy,grantingTicketExpirationPolicy,messageSource,servicesManager,httpClient,persistentIdGenerator,centralAuthenticationService,proxy10Handler,proxy20Handler,advisorAutoProxyCreator,validationAnnotationBeanPostProcessor,_authenticationManager,_filterChainProxy,_httpSessionContextIntegrationFilter,_filterChainProxyPostProcessor,_filterChainList,_securityContextHolderAwareRequestFilter,_accessManager,_portMapper,_exceptionTranslationFilter,_filterSecurityInterceptor,_sessionFixationProtectionFilter,_logoutFilter,_entryPointInjectionBeanPostProcessor,_userServiceInjectionPostProcessor,serviceProperties,casProcessingFilter,casProcessingFilterEntryPoint,casAuthenticationProvider,casArgumentExtractor,samlArgumentExtractor,argumentExtractors,authenticationManager,userDetailsService,attributeRepository,serviceRegistryDao]; root of factory hierarchy
+2014-03-19 14:41:04,839 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Quartz Scheduler v.1.5.2 created.
+2014-03-19 14:41:04,840 EDT [Thread-2] INFO [org.quartz.simpl.RAMJobStore]: RAMJobStore initialized.
+2014-03-19 14:41:04,840 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2014-03-19 14:41:04,840 EDT [Thread-2] INFO [org.quartz.impl.StdSchedulerFactory]: Quartz scheduler version: 1.5.2
+2014-03-19 14:41:04,842 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@672e34d8
+2014-03-19 14:41:04,843 EDT [Thread-2] INFO [org.springframework.scheduling.quartz.SchedulerFactoryBean]: Starting Quartz Scheduler now
+2014-03-19 14:41:04,843 EDT [Thread-2] INFO [org.quartz.core.QuartzScheduler]: Scheduler scheduler_$_NON_CLUSTERED started.
+2014-03-19 14:41:05,002 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Selecting AuthenticationEntryPoint for use in ExceptionTranslationFilter
+2014-03-19 14:41:05,006 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using main configured AuthenticationEntryPoint.
+2014-03-19 14:41:05,006 EDT [Thread-2] INFO [org.springframework.security.config.EntryPointInjectionBeanPostProcessor]: Using bean 'org.springframework.security.ui.cas.CasProcessingFilterEntryPoint@57a6d47b' as the entry point.
+2014-03-19 14:41:05,024 EDT [Thread-2] INFO [org.springframework.security.intercept.AbstractSecurityInterceptor]: Validated configuration attributes
+2014-03-19 14:41:05,050 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Checking sorted filter chain: [org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], OrderedFilterDecorator[ delegate=org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]; order=601], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@36ee7f4c]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: Filter chain...
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [0] - org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [1] - org.springframework.security.ui.logout.LogoutFilter[ order=300; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [2] - org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [3] - org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [4] - org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [5] - org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ]
+2014-03-19 14:41:05,051 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: [6] - org.springframework.security.intercept.web.FilterSecurityInterceptor@36ee7f4c
+2014-03-19 14:41:05,053 EDT [Thread-2] INFO [org.springframework.security.config.FilterChainProxyPostProcessor]: FilterChainProxy: FilterChainProxy[ UrlMatcher = org.springframework.security.util.AntUrlPathMatcher[requiresLowerCase='true']; Filter Chains: {/**=[org.springframework.security.context.HttpSessionContextIntegrationFilter[ order=200; ], org.springframework.security.ui.logout.LogoutFilter[ order=300; ], org.springframework.security.ui.cas.CasProcessingFilter[ order=600; ], org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter[ order=1100; ], org.springframework.security.ui.ExceptionTranslationFilter[ order=1400; ], org.springframework.security.ui.SessionFixationProtectionFilter[ order=1600; ], org.springframework.security.intercept.web.FilterSecurityInterceptor@36ee7f4c]}]
+2014-03-19 14:41:05,074 EDT [Thread-2] INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 1264 ms
+2014-03-19 14:41:05,104 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization started
+2014-03-19 14:41:05,105 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Refreshing org.springframework.web.context.support.XmlWebApplicationContext@8a8ad40: display name [WebApplicationContext for namespace 'cas-servlet']; startup date [Wed Mar 19 14:41:05 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@793df1ff
+2014-03-19 14:41:05,105 EDT [Thread-2] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]: Loading XML bean definitions from ServletContext resource [/WEB-INF/cas-servlet.xml]
+2014-03-19 14:41:05,147 EDT [Thread-2] INFO [org.springframework.web.context.support.XmlWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@8a8ad40]: org.springframework.beans.factory.support.DefaultListableBeanFactory@42b2818f
+2014-03-19 14:41:05,175 EDT [Thread-2] INFO [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]: Loading properties file from ServletContext resource [/WEB-INF/cas.properties]
+2014-03-19 14:41:05,180 EDT [Thread-2] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@42b2818f: defining beans [casPropertyPlaceholderConfigurer2,themeResolver,viewResolver,localeResolver,localeChangeInterceptor,urlBasedViewResolver,errorHandlerResolver,handlerMappingB,handlerMappingC,openIdProviderController,serviceLogoutViewController,loginController,flowExecutor,flowRegistry,proxyValidateController,serviceValidateController,samlValidateController,legacyValidateController,proxyController,logoutController,initialFlowSetupAction,authenticationViaFormAction,generateServiceTicketAction,sendTicketGrantingTicketAction,dynamicRedirectViewSelector,addRegisteredServiceSimpleFormController,editRegisteredServiceSimpleFormController,registeredServiceValidator,manageRegisteredServicesMultiActionController]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@21e17c6d
+2014-03-19 14:41:05,522 EDT [Thread-2] INFO [org.jasig.cas.web.flow.AuthenticationViaFormAction]: FormObjectClass not set.  Using default class of org.jasig.cas.authentication.principal.UsernamePasswordCredentials with formObjectName credentials and validator org.jasig.cas.validation.UsernamePasswordCredentialsValidator.
+2014-03-19 14:41:05,549 EDT [Thread-2] INFO [org.springframework.web.servlet.DispatcherServlet]: FrameworkServlet 'cas': initialization completed in 445 ms
+2014-03-19 14:41:24,879 EDT [scheduler_Worker-3] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 14:41:24 EDT 2014]
+2014-03-19 14:41:24,880 EDT [scheduler_Worker-3] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 14:41:24,880 EDT [scheduler_Worker-3] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 14:41:24 EDT 2014]
+2014-03-19 14:41:26,650 EDT [http-bio-8443-exec-6] INFO [org.springframework.context.support.GenericApplicationContext]: Refreshing org.springframework.context.support.GenericApplicationContext@e9b1f: display name [org.springframework.context.support.GenericApplicationContext@e9b1f]; startup date [Wed Mar 19 14:41:26 EDT 2014]; root of context hierarchy
+2014-03-19 14:41:26,650 EDT [http-bio-8443-exec-6] INFO [org.springframework.context.support.GenericApplicationContext]: Bean factory for application context [org.springframework.context.support.GenericApplicationContext@e9b1f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@3eea1040
+2014-03-19 14:41:26,650 EDT [http-bio-8443-exec-6] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3eea1040: defining beans []; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@42b2818f
+2014-03-19 14:41:26,722 EDT [http-bio-8443-exec-6] INFO [org.jasig.cas.web.flow.InitialFlowSetupAction]: Setting path for cookies to: /cas
+2014-03-19 14:41:26,785 EDT [http-bio-8443-exec-6] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5941b254: display name [org.springframework.web.context.support.GenericWebApplicationContext@5941b254]; startup date [Wed Mar 19 14:41:26 EDT 2014]; parent: org.springframework.web.context.support.XmlWebApplicationContext@8a8ad40
+2014-03-19 14:41:26,785 EDT [http-bio-8443-exec-6] INFO [org.springframework.web.context.support.GenericWebApplicationContext]: Bean factory for application context [org.springframework.web.context.support.GenericWebApplicationContext@5941b254]: org.springframework.beans.factory.support.DefaultListableBeanFactory@5ed6078d
+2014-03-19 14:41:26,790 EDT [http-bio-8443-exec-6] INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory]: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5ed6078d: defining beans [viewServiceErrorView,manageServiceView,serviceErrorView,serviceLogoutView,casLoginView,casLoginConfirmView,casLoginGenericSuccessView,casLogoutView,editServiceView,viewServiceSsoErrorView,addServiceView,casProxyFailureView,cas1ServiceSuccessView,casServiceFailureView,casOpenIdServiceFailureView,casProxySuccessView,casSamlServiceFailureView,cas1ServiceFailureView,casOpenIdServiceSuccessView,postResponseView,openIdProviderView,casServiceSuccessView,casSamlServiceSuccessView]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@42b2818f
+2014-03-19 14:41:36,529 EDT [http-bio-8443-exec-6] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 14:41:36,533 EDT [http-bio-8443-exec-6] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-1-rJdk2MyVY326SDXdRaRb-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 14:41:36,680 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 14:41:36,682 EDT [http-bio-8443-exec-3] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 15:41:58,950 EDT [http-bio-8443-exec-5] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-2-WKkdj2QqNmbftYLOIlfH-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 15:41:58,969 EDT [http-bio-8443-exec-11] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-3-5HiBEsx3fCirasnqsINF-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 15:41:59,023 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 15:41:59,023 EDT [http-bio-8443-exec-10] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 15:41:59,023 EDT [http-bio-8443-exec-3] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 15:41:59,023 EDT [http-bio-8443-exec-10] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 15:42:15,318 EDT [http-bio-8443-exec-4] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 15:42:15,318 EDT [http-bio-8443-exec-4] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-4-5cUDAuMezBxk7Mc4WNXb-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 15:42:15,331 EDT [http-bio-8443-exec-8] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 15:42:15,331 EDT [http-bio-8443-exec-8] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more
+2014-03-19 16:04:44,797 EDT [scheduler_Worker-7] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Starting cleaning of expired tickets from ticket registry at [Wed Mar 19 16:04:44 EDT 2014]
+2014-03-19 16:04:44,797 EDT [scheduler_Worker-7] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: 0 found to be removed.  Removing now.
+2014-03-19 16:04:44,797 EDT [scheduler_Worker-7] INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner]: Finished cleaning of expired tickets from ticket registry at [Wed Mar 19 16:04:44 EDT 2014]
+2014-03-19 16:22:06,314 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: ozone3.cas.adaptors.UserPropertiesFileAuthenticationHandler successfully authenticated the user which provided the following credentials: [username: testAdmin1]
+2014-03-19 16:22:06,314 EDT [http-bio-8443-exec-3] INFO [org.jasig.cas.CentralAuthenticationServiceImpl]: Granted service ticket [ST-5-cmcGwXvu2D3rQ4eKCwv4-cas] for service [https://localhost:8443/owf/j_spring_cas_security_check] for user [testAdmin1]
+2014-03-19 16:22:06,347 EDT [http-bio-8443-exec-10] INFO [org.jasig.cas.authentication.AuthenticationManagerImpl]: AuthenticationHandler: org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler failed to authenticate the user which provided the following credentials: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+2014-03-19 16:22:06,347 EDT [http-bio-8443-exec-10] ERROR[org.jasig.cas.web.ServiceValidateController]: TicketException generating ticket for: [callbackUrl: https://localhost:8443/owf/secure/receptor]
+org.jasig.cas.ticket.TicketCreationException: error.authentication.credentials.bad
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:291)
+	at org.jasig.cas.web.ServiceValidateController.handleRequestInternal(ServiceValidateController.java:126)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:153)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:875)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:807)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:571)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:501)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.jasig.cas.web.init.SafeDispatcherServlet.service(SafeDispatcherServlet.java:115)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.inspektr.common.web.ClientInfoThreadLocalFilter.doFilterInternal(ClientInfoThreadLocalFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:185)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:300)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: error.authentication.credentials.bad
+	at org.jasig.cas.authentication.handler.BadCredentialsAuthenticationException.<clinit>(BadCredentialsAuthenticationException.java:25)
+	at org.jasig.cas.authentication.AuthenticationManagerImpl.authenticate(AuthenticationManagerImpl.java:113)
+	at org.jasig.cas.CentralAuthenticationServiceImpl.delegateTicketGrantingTicket(CentralAuthenticationServiceImpl.java:262)
+	... 29 more

@@ -1,0 +1,29 @@
+2014-03-13 19:10:22,883 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-13 19:10:23,046 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-13 19:10:24,832 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-13 19:10:55,861 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-13 19:11:19,376 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
+2014-03-19 11:07:35,721 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-19 11:07:35,752 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-19 11:07:37,238 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-19 11:07:45,601 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-19 11:08:07,065 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
+2014-03-19 11:10:18,961 [http-bio-8443-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'gsp'
+2014-03-19 11:10:18,961 [http-bio-8443-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- GSP servlet initialized
+2014-03-19 14:31:19,925 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Destroying Spring FrameworkServlet 'grails'
+2014-03-19 14:31:20,109 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Destroying Spring FrameworkServlet 'gsp'
+2014-03-19 14:31:20,519 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Closing Spring root WebApplicationContext
+2014-03-19 14:34:01,725 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-19 14:34:01,757 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-19 14:34:03,182 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-19 14:36:42,422 [Thread-6] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-19 14:37:06,096 [Thread-6] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
+2014-03-19 14:39:56,700 [http-bio-8443-exec-13] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'gsp'
+2014-03-19 14:39:56,700 [http-bio-8443-exec-13] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- GSP servlet initialized
+2014-03-19 14:41:03,777 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-19 14:41:03,809 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-19 14:41:05,104 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-19 14:41:08,692 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-19 14:41:26,242 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
+2014-03-19 14:41:56,097 [http-bio-8443-exec-8] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'gsp'
+2014-03-19 14:41:56,097 [http-bio-8443-exec-8] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- GSP servlet initialized
