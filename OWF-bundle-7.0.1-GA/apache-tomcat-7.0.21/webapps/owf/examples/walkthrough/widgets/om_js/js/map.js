@@ -1,13 +1,13 @@
 var MapView = Backbone.View.extend({
   initialize: function() {
-    _.bindAll(this, 'initializeoverlays', 'initializelayers', 'initializerealtime', 'addStation', 'popUp', 'get_latest_profile', 'plot_profile');
+    _.bindAll(this, 'addStation', 'popUp', 'get_latest_profile', 'plot_profile','addLayertoMap');
 
     var that = this;
 
     var terr = L.tileLayer('http://{s}.tiles.mapbox.com/v3/asamap.map-p0q0dl08/{z}/{x}/{y}.png', {visible:false}),
     imgry  = L.tileLayer('http://{s}.tiles.mapbox.com/v3/asamap.map-ijjg5918/{z}/{x}/{y}.png', {visible:false}),
     asabase = L.tileLayer('http://{s}.tiles.mapbox.com/v3/asamap.asabase1/{z}/{x}/{y}.png', {visible:false}),
-    esocean = L.esri.basemapLayer("Oceans", {visible:false}),
+    esocean = L.esri.basemapLayer("Oceans", {visible:true}),
     charts = L.tileLayer.wms('http://egisws02.nos.noaa.gov/ArcGIS/services/RNC/NOAA_RNC/ImageServer/WMSServer?',{
        layers : "RNC/NOAA_RNC"
      });
@@ -73,23 +73,37 @@ var MapView = Backbone.View.extend({
     ;
 
     L.control.layers(baseMaps).addTo(this.map);
-
-    this.initializeoverlays();
-    this.initializelayers();
-    this.initializerealtime();
-
     this.model.set('selectProperted', '');
+
+    //subscribe
+    owfdojo.addOnLoad(function() {
+      OWF.ready(that.startOWF);
+    });   
   },
 
   //timeslider change
   updateTime: function(evt){
     var newTime = evt;
+    //publish map time on change
+    OWF.Eventing.publish("mapTimeChange", newTime);
   },
+
+  startOWF: function(){
+
+    OWF.Eventing.subscribe("add2Map", function (sender, msg, channel) {
+                 MapView.addLayertoMap(sender,msg);
+             });
+  },
+
+  addLayertoMap: function(sender,msg){
+    console.log(msg);
+  },
+
 
   //drop down for NDBC observations
   changeObs: function(evt) {
     //turn layer on and checkbox on
-    mapView.model.stationlayers['NDBC Stations'].addTo(mapView.map);
+    /*mapView.model.stationlayers['NDBC Stations'].addTo(mapView.map);
     var $stations = $(leftpanelView.$el.children('#stations'));
     var $layer = $($stations.children()[2]);
     var $checkbox_stations = $($layer.children('.checkbox'));
@@ -111,7 +125,7 @@ var MapView = Backbone.View.extend({
          }
       }
       mapView.model.stationlayers['NDBC Stations']._layers[marker].setOpacity(visibl);
-    }
+    }*/
   },
 
   addStation: function(f,l) {
@@ -165,7 +179,6 @@ var MapView = Backbone.View.extend({
     $loader.addClass('active');
 
     $.getJSON(
-      //'/ajax/stations/latest',
       'http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://imms.ehihouston.com/stations/'+sid+'/latest/JSON/?metric=True',
       { sid: sid },
       function(data) {
@@ -325,7 +338,7 @@ var MapView = Backbone.View.extend({
       .attr('y',-9)
       .attr('width', 133)
       .attr('height', 16)
-      .attr("xlink:href","../images/legend_rose.jpg");
+      .attr("xlink:href","../om_js/images/legend_rose.jpg");
 
     var updatedSpeed = svg.append("text")
       .attr('x',90)
@@ -459,183 +472,5 @@ var MapView = Backbone.View.extend({
       .attr('y', 9)
       .style('font-size', '1.5em')
       .text('W'); 
-  },
-
-  //EDS Layers
-  initializeoverlays: function() {
-    var that = this
-      , i
-      , html
-      , $modelslist = $('#modelslist')
-      , overlays = this.model.attributes.overlays;
-
-    //models popup
-    var $edsinfo = $('#edsinfo');
-    $edsinfo.children('i').popup();
-
-    function bindlistele(html, layer) {
-     $modelslist
-        .append(html)
-      .children().last() // select new element to bind to
-        .checkbox({
-          onEnable: function() {
-            that.map.addLayer(that.model.layers[layer]);
-          },
-          onDisable: function() {
-            that.map.removeLayer(that.model.layers[layer]);
-          }
-        })
-      ;
-    }
-
-    //initiate map variables
-    this.model.layers = {};
-    this.model.set('selectProperted', "");
-
-    
-    for (i=0; i<overlays.length; i++) {
-      var popuphtml =  '<p style="text-align:center;"><p style="text-align:center;"><img src="http://coastmap.com/ecop/wms.aspx?layers='+ overlays[i].name+'&transparent=true&styles=&request=GetLegendGraphic&width=112&version=1.1.1&format=image/png&height=155"></p>';
-
-       html = "<div class='item' style='padding-bottom: 6px;'>"
-           +   "<div class='ui checkbox toggle' style='margin-left: -30px;'>"
-           +     "<input type='checkbox' />"
-           +     "<label style='font-size:14px;'>" + overlays[i].title + "</label>"
-           +   "</div>"
-           +   "<i class='help icon link' style='position: relative; right: -248px; margin-top: -3px;' "
-           +     "data-html='" + popuphtml + "'></i>"
-           + "</div>";
-
-      //this.model.layers[overlays[i]] = L.tileLayer.betterWms('/ajax/wmsproxy', {
-      this.model.layers[overlays[i].title] = L.tileLayer.betterWms('http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://coastmap.com/ecop/wms.aspx?', {
-        layers: overlays[i].name,
-        format: 'image/png',
-        //add three for the list of basemap layers
-        zIndex: overlays.length + i+3
-      });
-
-      bindlistele(html, overlays[i].title);
-
-      var $layer = $modelslist.children().last()
-        , $helppopup = $layer.children('i');
-      $helppopup.popup({position:'bottom right'});
-    };
-  },
-  
-  initializerealtime: function() {
-    var that = this;
-
-    this.model.stationlayers = {};
-
-    function bindlistele(layer, popuphtml, enablecheckbox) {
-      var $stations = $('#stations')
-        , html
-        , popuptitle
-
-      html = "<div class='item'>"
-           +   "<div class='ui checkbox toggle'>"
-           +     "<input type='checkbox' />"
-           +     "<label style='font-size:14px;'>" + layer + "</label>"
-           +   "</div>"
-           +   "<i class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
-           +     "data-html='<h4 style=\"text-align:center;\" class=\"ui header\">" + layer + '</h4>' + popuphtml + "'></i>"
-           + "</div>";
-
-      $stations
-        .append(html);
-
-      var $obsinfo = $('#obsinfo');
-      $obsinfo.children('i').popup();
-
-      // select elements
-      var $layer = $stations.children().last()
-        , $checkbox = $layer.children('.checkbox')
-        , $helppopup = $layer.children('i');
-
-      $checkbox
-        .checkbox({
-          onEnable: function() {
-            mapView.model.stationlayers[layer].addTo(mapView.map);
-          },
-          onDisable: function() {
-            mapView.map.removeLayer(mapView.model.stationlayers[layer]);
-          }
-        })
-      ;
-
-      $helppopup.popup();
-
-      if (enablecheckbox) {
-        $checkbox.checkbox('enable');
-        that.model.stationlayers[layer].addTo(that.map);
-      }
-    }
-    // add adcp
-    //$.getJSON('/ajax/stations/getstations', function(response) {
-    $.getJSON('http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://imms.ehihouston.com/stations/JSON/', function(response) {
-      that.model.stationlayers['ADCP Stations'] = L.geoJson(response, {
-        pointToLayer: that.addStation,
-        onEachFeature: that.popUp
-      });
-      bindlistele('ADCP Stations', '<p style="text-align:center;">Observation stations from RPS Evan Hamilton, provide real time profile conditions at that location. <p style="text-align:center;"><img src="../images/adcp_leg.jpg" ><img src="../images/rps.png" ></p>', true); // true to enable layer
-    });
-
-    //add ndbc sos
-    addndbcstations(this); // <img src="../images/points/warning.png" >
-    bindlistele('NDBC Stations', '<p style="text-align:center;">Click to view time series for different observed properties from the National Buoy Service. <p style="text-align:center;"><img src="../images/noaa-logo.png" ></p>');
- },
-  initializelayers: function() {
-    var that = this;
-
-    this.model.gislayers = {};
-
-    function bindlistele(layer, popuphtml, enablecheckbox) {
-      var $lays = $('#layerTOC')
-        , html
-        , popuptitle
-
-      html = "<div class='item'>"
-           +   "<div class='ui checkbox toggle'>"
-           +     "<input type='checkbox' />"
-           +     "<label style='font-size:14px;'>" + layer + "</label>"
-           +   "</div>"
-           +   "<i class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
-           +     "data-html='<h4 style=\"text-align:center;\" class=\"ui header\">" + layer + '</h4>' + popuphtml + "'></i>"
-           + "</div>";
-
-      $lays
-        .append(html);
-
-      // select elements
-      var $layer = $lays.children().last()
-        , $checkbox = $layer.children('.checkbox')
-        , $helppopup = $layer.children('i');
-
-      $checkbox
-        .checkbox({
-          onEnable: function() {
-            mapView.model.gislayers[layer].addTo(mapView.map);
-          },
-          onDisable: function() {
-            mapView.map.removeLayer(mapView.model.gislayers[layer]);
-          }
-        })
-      ;
-
-      $helppopup.popup();
-
-      if (enablecheckbox) {
-        $checkbox.checkbox('enable');
-        that.model.gislayers[layer].addTo(that.map);
-      }
-    }
-
-    // add arc gis layer
-    this.model.gislayers['ArcGIS GIS Server'] = L.esri.dynamicMapLayer('http://gis.asascience.com/ArcGIS/rest/services/oilmap/oceansmap/MapServer');
-    bindlistele('ArcGIS GIS Server', '<p style="text-align:center;"><p style="text-align:center;"><img src="../images/ags_legend.jpg" ></p>');
-    //<img src="../images/esri.png" >
-
-     //weather
-    this.model.gislayers['Current Precipitation'] = L.tileLayer('http://{s}.tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png', {visible:false,zIndex:10, opacity:.4, attribution: 'Map data © OpenWeatherMap'});
-    bindlistele('Current Precipitation', '<p style="text-align:center;">Current Quantity of precipitation Coverage : provided by Open Weather Map<p style="text-align:center;"><img src="../images/PR.png" ></p>');
   }
 });

@@ -4,7 +4,7 @@ var GraphView = Backbone.View.extend({
   },
 
   initialize: function() {
-    _.bindAll(this, 'formatndbctograph', 'showloading', 'drawbottomgraph', 'hideshowtabs', 'cleargraphdata', 'togglebottomgraph');
+    _.bindAll(this, 'formatndbctograph', 'showloading', 'drawbottomgraph','startGraph', 'hideshowtabs', 'cleargraphdata', 'togglebottomgraph');
 
     var that = this;
 
@@ -54,6 +54,27 @@ var GraphView = Backbone.View.extend({
     // set the initial state to hidden
     this.model.set('state', 'hidden');
     this.$svg.css('display', 'none');
+
+    owfdojo.addOnLoad(function() {
+          OWF.ready(that.startGraph);
+    }); 
+  },
+
+  startGraph: function(){
+    //open/launch the map if not already open
+    var Mapguid;
+    var mapWidget = OWF.Preferences.getWidget({
+        universalName: 'org.owfgoss.owf.examples.oceansmap',
+        onSuccess: function(result) {
+        Mapguid = result.path;
+        OWF.Launcher.launch({
+            guid: Mapguid, launchOnlyIfClosed: true});
+      }
+    });
+
+    OWF.Eventing.subscribe("graphData", function (sender, msg, channel) {
+                 //GraphView.drawbottomgraph(sender,msg);
+             });
   },
 
   togglebottomgraph: function() {
@@ -436,3 +457,8 @@ var GraphView = Backbone.View.extend({
     this.drawbottomgraph();
   }
 });
+
+graphView = new GraphView({
+    el: document.getElementById('graphs'),
+    model: new Backbone.Model()
+  });

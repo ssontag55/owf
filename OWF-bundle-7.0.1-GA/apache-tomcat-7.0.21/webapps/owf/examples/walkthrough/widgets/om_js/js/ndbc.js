@@ -24,7 +24,7 @@
         //var markers = L.markerClusterGroup({maxClusterRadius: 25});
         var markers = L.layerGroup();
         var ndbcIcon = L.icon({
-            iconUrl: '../images/points/warning.png',
+            iconUrl: '../om_js/images/points/warning.png',
 
         });
 
@@ -70,7 +70,7 @@
         }
 
         //this.self.mapView.map.addLayer(markers);
-        this.self.mapView.model.stationlayers['NDBC Stations'] = markers;        
+        //this.self.mapView.model.stationlayers['NDBC Stations'] = markers;        
       }
 
       function clickSOS(evt){

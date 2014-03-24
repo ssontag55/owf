@@ -8,10 +8,10 @@
 		<param-name>webAppRootKey</param-name>
 		<param-value>@grails.project.key@</param-value>
 	</context-param>
-	<filter>
+	<!-- <filter>
 		<filter-name>cacheFilter</filter-name>
 		<filter-class>com.studentsonly.grails.plugins.uiperformance.CacheFilter</filter-class>
-	</filter>
+	</filter> -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -76,10 +76,10 @@
 		<filter-name>urlMapping</filter-name>
 		<filter-class>org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter</filter-class>
 	</filter>
-	<filter-mapping>
+	<!-- <filter-mapping>
 		<filter-name>cacheFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 	<filter>
 		<filter-name>hiddenHttpMethod</filter-name>
 		<filter-class>org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter</filter-class>

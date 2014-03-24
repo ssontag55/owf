@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.7.0
-Created-By: 1.5.0_07-87 ("Apple Computer, Inc.")
-Implementation-Vendor: springframework.org
-Implementation-Title: Spring Web Flow
-Implementation-Version: 1.0.5
-

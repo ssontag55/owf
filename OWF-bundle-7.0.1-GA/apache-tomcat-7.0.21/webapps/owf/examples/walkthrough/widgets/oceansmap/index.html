@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../om_js/css/oceanmap.css">
   </head>
   <body>
-    <div id="login">
+    <!-- <div id="login">
       <img src="images/rps.png" style="position:absolute; right:1px" >
       <div class="main ui raised segment">
         <div class="ui center aligned large header">
@@ -58,20 +58,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="mainappcontainer">
       <div id='rightcontainer'>
         <div id='topbar' class='ui fixed menu'>
-          <div id="titlebar" style="float:right; padding-right:295px;">
+          <div id="titlebar" style="float:right;">
           <a href="http://asascience.com/" target="_blank">
-             <img src="images/rps_big.png" height="43" >
+             <img src="../om_js/images/rps_big.png" height="43" >
           </a>
           </div>
           <div class='container'>
-            <a class='launch item active' style='margin-left: -8px;position: absolute; background-color: #CDD1DC;'>
-              <i class='icon exchange layout'></i>
-              Collapse
-            </a>
           </div>
             <div class='timeslider launch item' style=' margin-top: 41px;'>
               <div id='timeslider'></div>
@@ -81,7 +77,7 @@
             </div>
         </div>
         <div id="map"></div>
-        <!-- <div id="tools" class="ui teal buttons">
+        <div id="tools" class="ui teal buttons">
           <div class="ui dropdown selection" id="observs">
             <input type="hidden" name="Artist">
             <div class="default text">Show Me ...</div>
@@ -95,30 +91,8 @@
               <div class="item" data-value="air_pressure_at_sea_level">Air Pressure</div>
               <div class="item" data-value="all">Show All</div>
             </div>
-          </div> -->
+          </div>
         </div>
-<!--        <div id='graphs' class="graphs">
-          <div class='clickmap'></div>
-          <div class="txtover">
-            <p>Click on a NDBC Station to view Conditions</p>  
-          </div>
-        </div> -->
-        <!-- <div id='graphs' class='graphs'>
-          <div class='ui small tabular menu' style='z-index: 1; background: rgba(157, 165, 187, .5);'>
-            <a class='item active' data-id='winds'>Wind</a>
-            <a class='item' data-id='air_temperature'>Air Temp</a>
-            <a class='item' data-id='waves'>Wave Height</a>
-            <a class='item' data-id='sea_water_temperature'>Sea Temp</a>
-            <a class='item' data-id='currents'>Water Speed</a>
-            <a class='item' data-id='air_pressure_at_sea_level'>Air Pressure</a>
-            <a class='item' data-id='sea_water_salinity'>Water Salinity</a>
-          </div>
-          <div class="ui icon button" style="position: absolute; top: 0px; right: 0px; height: 39px;z-index:5;">
-            <i class="resize vertical icon"></i>
-          </div>
-          <div id="c3graph"></div>
-          <div style='display: none' class='ui active large loader'></div>
-        </div> -->
       </div>
     </div>
     <!-- libs -->
@@ -126,8 +100,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <!--    <script src="js/lib/jquery-ui-1.10.4.custom.min.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="js/lib/semantic.min.js"></script>
-<!--    <script src="js/lib/d3.v3.js"></script> -->
+    <script src="../om_js/js/lib/semantic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
     <script src="../om_js/js/lib/leaflet.js"></script>
     <script src="../om_js/js/lib/esri-leaflet.js"></script>
@@ -136,13 +109,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <!--    <script src="js/lib/backbone-min.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    
+    <script src="../../../../js-min/owf-widget-debug.js"></script>
     <script src="../om_js/js/lib/SOS/OpenLayers.js"></script>
     <script src="../om_js/js/lib/SOS/SOS.js"></script>
     <script src="../om_js/js/lib/SOS/SOS.Ui.js"></script>
-    
-    <!-- end libs
-    <script src="../om_js/js/lib/c3.js"></script>
-    <script src="../om_js/js/bottomgraph.js"></script> -->
     <script src="../om_js/js/ndbc.js"></script>
     <script src="../om_js/js/StationMarker.js"></script>
     <script src="../om_js/js/map.js"></script>
