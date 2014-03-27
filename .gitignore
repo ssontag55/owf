@@ -1,5 +1,10 @@
 # .gitignore for owf
 
+/*.data
+/*.log
+/*.script
+/*.properties
+
 # logs
 /stacktrace.log
 /test/reports
