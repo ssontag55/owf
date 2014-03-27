@@ -95,3 +95,22 @@
 2014-03-24 11:29:40,502 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
 2014-03-24 15:09:08,571 [http-bio-8443-exec-6] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'gsp'
 2014-03-24 15:09:08,571 [http-bio-8443-exec-6] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- GSP servlet initialized
+2014-03-25 16:22:20,208 [stop children - Catalina:j2eeType=WebModule,name=//localhost/cas,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Closing Spring root WebApplicationContext
+2014-03-25 16:22:20,442 [stop children - Catalina:j2eeType=WebModule,name=//localhost/cas,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Shutting down log4j
+2014-03-25 16:22:28,632 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Destroying Spring FrameworkServlet 'grails'
+2014-03-25 16:22:30,114 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Destroying Spring FrameworkServlet 'gsp'
+2014-03-25 16:22:32,766 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Closing Spring root WebApplicationContext
+2014-03-25 16:24:30,234 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-25 16:24:30,266 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-25 16:24:31,670 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-25 16:24:35,694 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-25 16:24:58,913 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'
+2014-03-25 16:35:28,800 [stop children - Catalina:j2eeType=WebModule,name=//localhost/cas,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Closing Spring root WebApplicationContext
+2014-03-25 16:35:28,801 [stop children - Catalina:j2eeType=WebModule,name=//localhost/cas,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Shutting down log4j
+2014-03-25 16:35:28,827 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Destroying Spring FrameworkServlet 'grails'
+2014-03-25 16:35:29,436 [stop children - Catalina:j2eeType=WebModule,name=//localhost/owf,J2EEApplication=none,J2EEServer=none] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Closing Spring root WebApplicationContext
+2014-03-25 16:35:36,652 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing log4j from [classpath:log4j.xml]
+2014-03-25 16:35:36,685 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring root WebApplicationContext
+2014-03-25 16:35:38,086 [Thread-2] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/cas]- Initializing Spring FrameworkServlet 'cas'
+2014-03-25 16:35:41,438 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring root WebApplicationContext
+2014-03-25 16:35:59,207 [Thread-3] INFO  org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/owf]- Initializing Spring FrameworkServlet 'grails'

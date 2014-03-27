@@ -1,6 +1,6 @@
 var MapView = Backbone.View.extend({
   initialize: function() {
-    _.bindAll(this, 'addStation', 'popUp', 'get_latest_profile', 'plot_profile','addLayertoMap');
+    _.bindAll(this, 'get_latest_profile', 'plot_profile','addLayertoMap');
 
     var that = this;
 
@@ -89,10 +89,58 @@ var MapView = Backbone.View.extend({
   },
 
   startOWF: function(){
-
+    //Listeners to channels
     OWF.Eventing.subscribe("add2Map", function (sender, msg, channel) {
-                 MapView.addLayertoMap(sender,msg);
-             });
+                // == " Stations"
+                if(msg._layers){
+                  //msg.options.pointToLayer= mapView.addStation;
+                  //msg.options.onEachFeature = mapView.popUp;
+                  mapView.map.addLayer(msg);
+                }
+                //for WMS layers
+                else if(msg.wmsParams){
+                  mapView.map.addLayer(L.tileLayer.betterWms(msg._url,{id:msg.wmsParams.layers,layers:msg.wmsParams.layers,zIndex:msg.wmsParams.zIndex}));
+                }
+                //Tileservice
+                else if(msg._url){
+                  mapView.map.addLayer(L.tileLayer(msg._url,msg.options));
+                }
+                //ArcGIS Dynamic Web services
+                else if(msg.serviceUrl){
+                  mapView.map.addLayer(L.esri.dynamicMapLayer(msg.serviceUrl,{options:msg.options}));
+                }
+        });
+    OWF.Eventing.subscribe("removeFromMap", function (sender, msg, channel) {
+                if(msg.wmsParams){
+                  //I can't believe I have to fucking do this
+                  for(var l in mapView.map._layers){
+                    if(mapView.map._layers[l].wmsParams && mapView.map._layers[l].wmsParams.layers == msg.wmsParams.layers){
+                      mapView.map.removeLayer(mapView.map._layers[l]);
+                    }
+                  }
+                }
+                //remove tileservices
+                else if(msg._url){
+                  for(var l in mapView.map._layers){
+                    if(mapView.map._layers[l]._url && mapView.map._layers[l]._url == msg._url){
+                      mapView.map.removeLayer(mapView.map._layers[l]);
+                    }
+                  }
+                }
+                //remove ArcGIS Services
+                else if(msg.serviceUrl){
+                  for(var l in mapView.map._layers){
+                    if(mapView.map._layers[l].serviceUrl && mapView.map._layers[l].serviceUrl == msg.serviceUrl){
+                      if(mapView.map._layers[l]._layerParams.layers == msg._layerParams.layers){
+                          mapView.map.removeLayer(mapView.map._layers[l]);
+                      }
+                    }
+                  }
+                }
+                else{
+                  mapView.map.removeLayer(msg);
+                }
+        });
   },
 
   addLayertoMap: function(sender,msg){
@@ -126,49 +174,6 @@ var MapView = Backbone.View.extend({
       }
       mapView.model.stationlayers['NDBC Stations']._layers[marker].setOpacity(visibl);
     }*/
-  },
-
-  addStation: function(f,l) {
-    var geojsonMarkerOptions = {
-      radius: 8,
-      fillColor: "#00CC00",
-      color: "#000",
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 0.8
-    };
-
-    if (f.properties.status == "Critical") {
-      geojsonMarkerOptions.fillColor = "#CC0000";
-    } else if (f.properties.status == "Warning") {
-      geojsonMarkerOptions.fillColor = "#CCCC00";
-    } else if (f.properties.status == "Inactive") {
-      geojsonMarkerOptions.fillColor = "#777777";
-    } else {
-      geojsonMarkerOptions.fillColor = "#00CC00";
-    }
-    var stationMarker = new L.StationMarker(l, geojsonMarkerOptions);
-    return stationMarker;
-//    return new L.StationMarker(l, geojsonMarkerOptions);
-  },
-
-  popups: {},
-  popUp: function(f,l) {
-    var out = []
-      , popup = L.popup({ minWidth: 330 })
-      , html = '<div id="'+f.id+'-station_popup_content">'
-          // href="' + document.URL + '"
-             + '<strong><a>' + f.properties.name + '</a></strong><br />'
-             + 'Status: <span class="status"></span><br />'
-             + '<div class="title"></div><br />'
-             + '<div class="ui active inline medium loader" style="width: 100%; margin: 0 auto;"></div>'
-             + '<div class="graph"></div><br />'
-             + '</div>';
-
-    popup.setContent(html);
-    this.popups[f.properties.id] = popup;
-    l.bindLabel(f.properties.name,{ direction: 'auto'});
-    l.bindPopup(popup);
   },
 
   get_latest_profile: function(sid) {

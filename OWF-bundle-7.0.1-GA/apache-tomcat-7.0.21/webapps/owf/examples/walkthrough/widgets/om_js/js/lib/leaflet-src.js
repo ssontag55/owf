@@ -3100,7 +3100,7 @@ L.TileLayer.WMS = L.TileLayer.extend({
 		this._url = url;
 
 		var wmsParams = L.extend({}, this.defaultWmsParams),
-		    tileSize = options.tileSize || this.options.tileSize;
+		    tileSize = options.tileSize || this.options.tileSize || 256;
 
 		if (options.detectRetina && L.Browser.retina) {
 			wmsParams.width = wmsParams.height = tileSize * 2;
@@ -3205,7 +3205,8 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
       success: function (data, status, xhr) {
         var err = typeof data === 'string' ? null : data;
         var timeData = L.Util.xmlToJson(data);
-        graphView.formatleaflettograph(timeData);
+        //graphView.formatleaflettograph(timeData);
+        OWF.Eventing.publish("graphData", timeData);
         //showResults(err, evt.latlng, data);
       },
       error: function (xhr, status, error) {

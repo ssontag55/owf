@@ -69,8 +69,8 @@
             }
         }
 
-        //this.self.mapView.map.addLayer(markers);
-        //this.self.mapView.model.stationlayers['NDBC Stations'] = markers;        
+        //this..mapView.map.addLayer(markers);
+        this.leftpanelView.model.stationlayers['NDBC Stations'] = markers;        
       }
 
       function clickSOS(evt){

@@ -1,6 +1,6 @@
 var LeftpanelView = Backbone.View.extend({
   initialize: function() {
-  	_.bindAll(this, 'startTOC');
+  	_.bindAll(this, 'startTOC','addStation','popUp');
 
   	var that = this;
   		//subscribe
@@ -103,7 +103,7 @@ var LeftpanelView = Backbone.View.extend({
            +     "<input type='checkbox' />"
            +     "<label style='font-size:14px;'>" + layer + "</label>"
            +   "</div>"
-           +   "<i class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
+           +   "<i data-position='bottom left' class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
            +     "data-html='<h4 style=\"text-align:center;\" class=\"ui header\">" + layer + '</h4>' + popuphtml + "'></i>"
            + "</div>";
 
@@ -121,11 +121,10 @@ var LeftpanelView = Backbone.View.extend({
       $checkbox
         .checkbox({
           onEnable: function() {
-          	OWF.Eventing.publish("add2Map", 'dasfasdf');
-            //mapView.model.stationlayers[layer].addTo(mapView.map);
+          	OWF.Eventing.publish("add2Map", that.model.stationlayers[layer]);
           },
           onDisable: function() {
-            OWF.Eventing.publish("removeFromMap", 'dasfasdf');
+            OWF.Eventing.publish("removeFromMap", that.model.stationlayers[layer]);
           }
         })
       ;
@@ -140,7 +139,7 @@ var LeftpanelView = Backbone.View.extend({
     // add adcp
     $.getJSON('http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://imms.ehihouston.com/stations/JSON/', function(response) {
       that.model.stationlayers['ADCP Stations'] = L.geoJson(response, {
-        pointToLayer: that.addStation,
+      	pointToLayer: that.addStation,
         onEachFeature: that.popUp
       });
       bindlistele('ADCP Stations', '<p style="text-align:center;">Observation stations from RPS Evan Hamilton, provide real time profile conditions at that location. <p style="text-align:center;"><img src="../om_js/images/adcp_leg.jpg" ><img src="../om_js/images/rps.png" ></p>', true); // true to enable layer
@@ -165,7 +164,7 @@ var LeftpanelView = Backbone.View.extend({
            +     "<input type='checkbox' />"
            +     "<label style='font-size:14px;'>" + layer + "</label>"
            +   "</div>"
-           +   "<i class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
+           +   "<i data-position='top left' class='help icon link' style='position: absolute; right: 0px; padding-top: 10px;' "
            +     "data-html='<h4 style=\"text-align:center;\" class=\"ui header\">" + layer + '</h4>' + popuphtml + "'></i>"
            + "</div>";
 
@@ -180,10 +179,10 @@ var LeftpanelView = Backbone.View.extend({
       $checkbox
         .checkbox({
           onEnable: function() {
-            //mapView.model.gislayers[layer].addTo(mapView.map);
+          	OWF.Eventing.publish("add2Map", that.model.gislayers[layer]);
           },
           onDisable: function() {
-            //mapView.map.removeLayer(mapView.model.gislayers[layer]);
+          	OWF.Eventing.publish("removeFromMap",  that.model.gislayers[layer]);
           }
         })
       ;
@@ -213,7 +212,7 @@ var LeftpanelView = Backbone.View.extend({
       , $modelslist = $('#modelslist')
       , overlays = wmsoverlays;
 
-    that.model.layers = wmsoverlays;
+    //that.model.layers = wmsoverlays;
     //models popup
     var $edsinfo = $('#edsinfo');
     $edsinfo.children('i').popup();
@@ -224,17 +223,18 @@ var LeftpanelView = Backbone.View.extend({
       .children().last() // select new element to bind to
         .checkbox({
           onEnable: function() {
-            //that.map.addLayer(that.model.layers[layer]);
+          	OWF.Eventing.publish("add2Map",  that.model.layers[layer]);
           },
           onDisable: function() {
-            //that.map.removeLayer(that.model.layers[layer]);
+          	OWF.Eventing.publish("removeFromMap",  that.model.layers[layer]);
           }
         })
       ;
     }
 
     //initiate map variables
-    that.model.set('selectProperted', "");
+    this.model.layers = {};
+    this.model.set('selectProperted', "");
     
     for (i=0; i<overlays.length; i++) {
       var popuphtml =  '<p style="text-align:center;"><p style="text-align:center;"><img src="http://coastmap.com/ecop/wms.aspx?layers='+ overlays[i].name+'&transparent=true&styles=&request=GetLegendGraphic&width=112&version=1.1.1&format=image/png&height=155"></p>';
@@ -244,9 +244,15 @@ var LeftpanelView = Backbone.View.extend({
            +     "<input type='checkbox' />"
            +     "<label style='font-size:14px;'>" + overlays[i].title + "</label>"
            +   "</div>"
-           +   "<i class='help icon link' style='position: relative; right: -248px; margin-top: -3px;' "
+           +   "<i data-position='bottom left' class='help icon link' style='position: relative; right: -248px; margin-top: -3px;' "
            +     "data-html='" + popuphtml + "'></i>"
            + "</div>";
+       this.model.layers[overlays[i].title] = L.tileLayer.betterWms('http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://coastmap.com/ecop/wms.aspx?', {
+        layers: overlays[i].name,
+        format: 'image/png',
+        //add three for the list of basemap layers
+        zIndex: overlays.length + i+3
+      });
 
       bindlistele(html, overlays[i].title);
 
@@ -254,6 +260,49 @@ var LeftpanelView = Backbone.View.extend({
         , $helppopup = $layer.children('i');
       $helppopup.popup({position:'bottom right'});
     };
+  },
+
+  addStation: function(f,l) {
+    var geojsonMarkerOptions = {
+      radius: 8,
+      fillColor: "#00CC00",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+
+    if (f.properties.status == "Critical") {
+      geojsonMarkerOptions.fillColor = "#CC0000";
+    } else if (f.properties.status == "Warning") {
+      geojsonMarkerOptions.fillColor = "#CCCC00";
+    } else if (f.properties.status == "Inactive") {
+      geojsonMarkerOptions.fillColor = "#777777";
+    } else {
+      geojsonMarkerOptions.fillColor = "#00CC00";
+    }
+    var stationMarker = new L.StationMarker(l, geojsonMarkerOptions);
+    return stationMarker;
+//    return new L.StationMarker(l, geojsonMarkerOptions);
+  },
+
+  popups: {},
+  popUp: function(f,l) {
+    var out = []
+      , popup = L.popup({ minWidth: 330 })
+      , html = '<div id="'+f.id+'-station_popup_content">'
+          // href="' + document.URL + '"
+             + '<strong><a>' + f.properties.name + '</a></strong><br />'
+             + 'Status: <span class="status"></span><br />'
+             + '<div class="title"></div><br />'
+             + '<div class="ui active inline medium loader" style="width: 100%; margin: 0 auto;"></div>'
+             + '<div class="graph"></div><br />'
+             + '</div>';
+
+    popup.setContent(html);
+    leftpanelView.popups[f.properties.id] = popup;
+    l.bindLabel(f.properties.name,{ direction: 'auto'});
+    l.bindPopup(popup);
   }
 });
 

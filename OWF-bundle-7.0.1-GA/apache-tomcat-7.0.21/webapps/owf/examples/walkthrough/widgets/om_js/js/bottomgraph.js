@@ -25,7 +25,7 @@ var GraphView = Backbone.View.extend({
     }
 
     this.model.set('activetab', 'winds');
-
+    
     // add handlers for tabs
     var tab;
     for (tab in this.selectedfeatureindex) {
@@ -52,7 +52,7 @@ var GraphView = Backbone.View.extend({
     });
 
     // set the initial state to hidden
-    this.model.set('state', 'hidden');
+    this.model.set('state', 'visible');
     this.$svg.css('display', 'none');
 
     owfdojo.addOnLoad(function() {
@@ -73,7 +73,7 @@ var GraphView = Backbone.View.extend({
     });
 
     OWF.Eventing.subscribe("graphData", function (sender, msg, channel) {
-                 //GraphView.drawbottomgraph(sender,msg);
+                 graphView.formatleaflettograph(msg);
              });
   },
 
@@ -90,7 +90,7 @@ var GraphView = Backbone.View.extend({
         { duration: 1000,
           easing: 'easeOutExpo',
           done: function() {
-            that.model.set('state', 'hidden');
+            //that.model.set('state', 'hidden');
             mapView.map.invalidateSize();
           }
         }
@@ -131,15 +131,15 @@ var GraphView = Backbone.View.extend({
     var that = this;
 
     this.drawbottomgraph();
-    if (this.model.get('state') != 'visible') {
+    /*if (this.model.get('state') != 'visible') {
       this.togglebottomgraph();
-    }
+    }*/
 
     this.$loader.fadeIn();
     this.$svg.fadeOut();
 
     this.loadingtimeout = setTimeout(function() {
-      if (that.model.get('state') == 'hidden') {
+      if (that.model.get('state') == 'visible') {
 
         var tabtoshow;
         if (that.graphdata.winds) {
@@ -160,7 +160,7 @@ var GraphView = Backbone.View.extend({
           that.$tabs.each(function() {
             if ($(this).data('id') == tabtoshow) {
               that.model.set('activetab', $(this).data('id'));
-              that.togglebottomgraph();
+              //that.togglebottomgraph();
               return false;
             }
           });
@@ -177,10 +177,11 @@ var GraphView = Backbone.View.extend({
     var activetab = this.model.get('activetab')
       , datum;
 
+    var justForecast = false;
     if (this.graphdata[activetab]){
       datum = this.graphdata[activetab];
-      if (this.model.get('state') == 'hidden')
-        this.togglebottomgraph();
+      //if (this.model.get('state') == 'hidden')
+        //this.togglebottomgraph();
     } 
     /*else if(this.winddata){
       datum = this.winddata;
@@ -203,7 +204,24 @@ var GraphView = Backbone.View.extend({
       this.model.set('activetab', 'currents');
     }*/
     else {
-      return;
+      //Just map the EDS Model data output
+      //return;
+      justForecast = true;
+      if(this.winddata){
+        datum = this.winddata;
+      }
+      else if(this.wavedata){
+        datum = this.wavedata;
+      }
+      else if(this.seatempdata){
+        datum = this.seatempdata;
+      }
+      else if(this.airpressdata){
+        datum = this.airpressdata;
+      }
+      else if(this.currentdata){
+        datum = this.currentdata;
+      }
     }
 
     var chart
@@ -247,11 +265,7 @@ var GraphView = Backbone.View.extend({
         this.currentdata[1]
       );
     }
-    else {
-      columns.push(
-        datum[0],
-        datum[1]
-      );
+    else{
     }
 
     chart = c3.generate({
@@ -377,7 +391,7 @@ var GraphView = Backbone.View.extend({
     }
     
       this.drawbottomgraph();
-      this.model.set('state', 'visible');
+      //this.model.set('state', 'visible');
     }
   },
 
