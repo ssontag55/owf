@@ -227,7 +227,6 @@ var GraphView = Backbone.View.extend({
     var chart
       , columns = [];
 
-    var unitVal = datum[2];
     if((activetab == 'winds') && (this.winddata)) {
       columns.push(
         datum[0],
@@ -268,6 +267,8 @@ var GraphView = Backbone.View.extend({
     else{
     }
 
+    var unitVal = datum[2];
+
     chart = c3.generate({
       bindto: '#c3graph',
       size: {
@@ -297,7 +298,7 @@ var GraphView = Backbone.View.extend({
           tick: {
             format: function(date) {
               var date = new Date(date);
-              return date.getMonth() + '/' + date.getDate() + ' ' + date.toTimeString().substr(0,5);
+              return date.getMonth()+1 + '/' + date.getDate() + ' ' + date.toTimeString().substr(0,5);
             }
           }
         },

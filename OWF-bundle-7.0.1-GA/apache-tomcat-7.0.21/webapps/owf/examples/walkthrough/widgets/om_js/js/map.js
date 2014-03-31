@@ -105,11 +105,13 @@ var MapView = Backbone.View.extend({
                 }
                 //for WMS layers
                 else if(msg.wmsParams){
-                  mapView.map.addLayer(L.tileLayer.betterWms(msg._url,{id:msg.wmsParams.layers,layers:msg.wmsParams.layers,zIndex:msg.wmsParams.zIndex}));
-                }
-                //for SAR layers
-                else if(msg.wmsParams.SEARCHAREA){
-                  mapView.map.addLayer(L.tileLayer.sarWms(msg._url,msg.wmsParams));
+                    //for SAR layers
+                    if(msg.wmsParams.SEARCHAREA){
+                      mapView.map.addLayer(L.tileLayer.sarWms(msg._url,msg.wmsParams));
+                    }
+                    else{
+                      mapView.map.addLayer(L.tileLayer.betterWms(msg._url,{id:msg.wmsParams.layers,layers:msg.wmsParams.layers,zIndex:msg.wmsParams.zIndex}));
+                    }
                 }
                 //Tileservice
                 else if(msg._url){

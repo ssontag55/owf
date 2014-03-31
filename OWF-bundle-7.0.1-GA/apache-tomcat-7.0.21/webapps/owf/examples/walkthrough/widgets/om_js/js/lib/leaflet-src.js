@@ -3198,6 +3198,7 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
   
   getFeatureInfo: function (evt) {
     // Make an AJAX request to the server and hope for the best
+    this.fire('loading');
     var url = this.getFeatureInfoUrl(evt.latlng);
     var showResults = L.Util.bind(this.showGetFeatureInfo, this);
     $.ajax({
@@ -3207,6 +3208,7 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
         var timeData = L.Util.xmlToJson(data);
         //graphView.formatleaflettograph(timeData);
         OWF.Eventing.publish("graphData", timeData);
+        this.off('loading');
         //showResults(err, evt.latlng, data);
       },
       error: function (xhr, status, error) {
