@@ -3277,6 +3277,68 @@ L.tileLayer.betterWms = function (url, options) {
 };
 
 
+//SAROPS Custom WMS 
+L.TileLayer.SARWMS = L.TileLayer.WMS.extend({
+  defaultLayerOptions: {
+		scenario_id:126,
+		OM_SPILLETS:true,
+		OM_CONTOUR:false,
+		lang:0,
+		OM_SWEPT:true,
+		OM_TRACKLINE:false,
+		SEARCHAREA:true,
+		session_id:'15_alzm10677AL106',
+		PROBABILITYGRID:false,
+		DAYNIGHTICON:false,
+		SUMMARYTABLE:false,
+		user_id:15,
+        time:'2014-03-30T16:40:00'
+	},
+
+	initialize: function (url, options) { // (String, Object)
+
+		this._url = url;
+
+		var wmsParams = L.extend({}, this.defaultWmsParams),
+		    tileSize = options.tileSize || this.options.tileSize || 256;
+
+		if (options.detectRetina && L.Browser.retina) {
+			wmsParams.width = wmsParams.height = tileSize * 2;
+		} else {
+			wmsParams.width = wmsParams.height = tileSize;
+		}
+
+		for (var i in options) {
+			// all keys that are not TileLayer options go to WMS params
+			if (!this.options.hasOwnProperty(i) && i !== 'crs') {
+				wmsParams[i] = options[i];
+			}
+		}
+
+		this.wmsParams = wmsParams;
+
+		L.setOptions(this, options);
+
+	},
+  onAdd: function (map) {
+    // Triggered when the layer is added to a map.
+    //   Register a click listener, then do all the upstream WMS things
+    L.TileLayer.WMS.prototype.onAdd.call(this, map);
+  },
+  
+  onRemove: function (map) {
+    // Triggered when the layer is removed from a map.
+    //   Unregister a click listener, then do all the upstream WMS things
+    L.TileLayer.WMS.prototype.onRemove.call(this, map);
+  },
+  
+  
+});
+ 
+L.tileLayer.sarWms = function (url, options) {
+  return new L.TileLayer.SARWMS(url, options);  
+};
+
 /*
  * L.TileLayer.Canvas is a class that you can use as a base for creating
  * dynamically drawn Canvas-based tile layers.

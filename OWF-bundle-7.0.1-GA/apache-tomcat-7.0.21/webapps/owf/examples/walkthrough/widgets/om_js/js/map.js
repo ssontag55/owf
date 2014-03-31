@@ -13,13 +13,15 @@ var MapView = Backbone.View.extend({
      });
 
     this.map = L.map('map', {
-      center: new L.LatLng(28, -90),
-      zoom: 6,
+      center: new L.LatLng(28, -82),
+      zoom: 7,
       maxZoom: 11,
       minZoom: 3,
       loadingControl: true,
       layers: [esocean]
     });
+
+    this.map.on('click', this.publishMapClick);
 
     var baseMaps = {
       "RPS Map": asabase,
@@ -88,6 +90,10 @@ var MapView = Backbone.View.extend({
     OWF.Eventing.publish("mapTimeChange", newTime);
   },
 
+  publishMapClick:function(evt){
+    OWF.Eventing.publish("leafletMapClick", evt);
+  },
+
   startOWF: function(){
     //Listeners to channels
     OWF.Eventing.subscribe("add2Map", function (sender, msg, channel) {
@@ -100,6 +106,10 @@ var MapView = Backbone.View.extend({
                 //for WMS layers
                 else if(msg.wmsParams){
                   mapView.map.addLayer(L.tileLayer.betterWms(msg._url,{id:msg.wmsParams.layers,layers:msg.wmsParams.layers,zIndex:msg.wmsParams.zIndex}));
+                }
+                //for SAR layers
+                else if(msg.wmsParams.SEARCHAREA){
+                  mapView.map.addLayer(L.tileLayer.sarWms(msg._url,msg.wmsParams));
                 }
                 //Tileservice
                 else if(msg._url){
