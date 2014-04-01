@@ -17,6 +17,10 @@
       
       sos.getCapabilities();
 
+      OWF.Eventing.subscribe("leafletmarkerClick", function (sender, msg, channel) {
+                 clickSOS(msg);
+             });
+
       function capsHandler(evt) {
         //getcaps object
         var s = evt.object.SOSCapabilities;
@@ -61,10 +65,10 @@
                 obpropList.push(stripProperty[6]);
               }
               var marker = L.marker(new L.LatLng(s.contents.offeringList[i].bounds.top, s.contents.offeringList[i].bounds.left), { title: realname[4], icon:ndbcIcon });
-              //marker.bindPopup(s.contents.offeringList[i].name);
+              marker.bindPopup("Station: " + realname[4]+ '<br>Lat: '+(s.contents.offeringList[i].bounds.top).toPrecision(4) + ' Long: '+(s.contents.offeringList[i].bounds.left).toPrecision(4) + toolTipcreator(obpropList));
               marker.on('click',clickSOS);
               marker.attributes = obpropList;
-              marker.bindLabel("Station: " + realname[4]+ '<br>Lat: '+(s.contents.offeringList[i].bounds.top).toPrecision(4) + ' Long: '+(s.contents.offeringList[i].bounds.left).toPrecision(4) + toolTipcreator(obpropList),{ direction: 'auto', className:'ndbclabeltext'});
+              //marker.bindLabel("Station: " + realname[4]+ '<br>Lat: '+(s.contents.offeringList[i].bounds.top).toPrecision(4) + ' Long: '+(s.contents.offeringList[i].bounds.left).toPrecision(4) + toolTipcreator(obpropList),{ direction: 'auto', className:'ndbclabeltext'});
               markers.addLayer(marker);
             }
         }
@@ -77,34 +81,37 @@
         
         //trigger map event when graphic is clicked
         var objClick = {'latlng':evt.latlng};
-        mapView.map.fire('click',objClick, this);
+        //mapView.map.fire('click',objClick, this);
+        OWF.Eventing.publish("leafletMapClick", evt);
 
         var resultOffering;
         resultOffering = sos.getOffering('station-'+evt.target.options.title);
         if(resultOffering.time.timePeriod.endPosition == "")
         {
+          //just get two days.  Todo: make it based on the timeslider
           var currentTime = new Date();
           var yestTime = new Date();
           yestTime.setDate(yestTime.getDate() - 2);
 
           // add loader
-          graphView.showloading(); // $('#graphs').html("<div class='ui active large loader'>Loading</div>");
+          //graphView.showloading(); // $('#graphs').html("<div class='ui active large loader'>Loading</div>");
 
           //if user selects drop down on map, select that parameter, other wise default to first property
           //attribute found on the marker object
-          var selectedObsProp = mapView.model.get('selectProperted') || evt.target.attributes[0];
-          graphView.model.set('activetab', selectedObsProp);
+          //var selectedObsProp = mapView.model.get('selectProperted') || evt.target.attributes[0];
+          //graphView.model.set('activetab', selectedObsProp);
 
-          graphView.hideshowtabs(evt.target.attributes);
-          graphView.cleargraphdata();
-
+          //graphView.hideshowtabs(evt.target.attributes);
+          //graphView.cleargraphdata();
+          OWF.Eventing.publish("clearGraphData","");
           evt.target.attributes.forEach(function(feature) {
+            OWF.Eventing.publish("graphQueryStart",yestTime);
             resultOffering.getObservations(feature,yestTime,currentTime,obsHandler);
           });
 
-          if(mapView.model.get('selectProperted') != ""){
+          /*if(mapView.model.get('selectProperted') != ""){
             selectedObsProp = mapView.model.get('selectProperted');
-          }
+          }*/
 //          resultOffering.getObservations(selectedObsProp,yestTime,currentTime,obsHandler);
         }
 
@@ -113,7 +120,8 @@
             var ob = resultOffering.getObservationRecord(i);
           }*/
           var jsonreturn = JSON.parse(evt2.object.SOSObservations);
-          graphView.formatndbctograph(jsonreturn);
+          OWF.Eventing.publish("graphSOSData", jsonreturn);
+          //graphView.formatndbctograph(jsonreturn);
         }
       }
 };

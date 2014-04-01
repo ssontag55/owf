@@ -218,7 +218,9 @@ this.wmsParams=i,s.setOptions(this,e)},onAdd:function(t){this._crs=this.options.
 var e=this._wmsVersion>=1.3?"crs":"srs"
 this.wmsParams[e]=this._crs.code,mapView.on("timesliderChange",this.updateTime,this),s.TileLayer.prototype.onAdd.call(this,t)},updateTime:function(t){var e=s.Util.formatTimeWMS(t)
 this.wmsParams.time=e,this.redraw()},getTileUrl:function(t){var e=this._map,i=this.options.tileSize,n=t.multiplyBy(i),o=n.add([i,i]),a=this._crs.project(e.unproject(n,t.z)),r=this._crs.project(e.unproject(o,t.z)),h=this._wmsVersion>=1.3&&this._crs===s.CRS.EPSG4326?[r.y,a.x,a.y,r.x].join(","):[a.x,r.y,r.x,a.y].join(","),l=s.Util.template(this._url,{s:this._getSubdomain(t)})
-return l+s.Util.getParamString(this.wmsParams,l,!0)+"&BBOX="+h},setParams:function(t,e){return s.extend(this.wmsParams,t),e||this.redraw(),this}}),s.tileLayer.wms=function(t,e){return new s.TileLayer.WMS(t,e)},s.TileLayer.BetterWMS=s.TileLayer.WMS.extend({onAdd:function(t){s.TileLayer.WMS.prototype.onAdd.call(this,t),t.on("click",this.getFeatureInfo,this)},onRemove:function(t){s.TileLayer.WMS.prototype.onRemove.call(this,t),t.off("click",this.getFeatureInfo,this)},getFeatureInfo:function(t){var e=this.getFeatureInfoUrl(t.latlng),i=s.Util.bind(this.showGetFeatureInfo,this)
+return l+s.Util.getParamString(this.wmsParams,l,!0)+"&BBOX="+h},setParams:function(t,e){return s.extend(this.wmsParams,t),e||this.redraw(),this}}),s.tileLayer.wms=function(t,e){return new s.TileLayer.WMS(t,e)},s.TileLayer.BetterWMS=s.TileLayer.WMS.extend({onAdd:function(t){s.TileLayer.WMS.prototype.onAdd.call(this,t),t.on("click",this.getFeatureInfo,this)},onRemove:function(t){s.TileLayer.WMS.prototype.onRemove.call(this,t),t.off("click",this.getFeatureInfo,this)},getFeatureInfo:function(t){var e=this.getFeatureInfoUrl(t.latlng)
+OWF.Eventing.publish("graphQueryStart",e)
+var i=s.Util.bind(this.showGetFeatureInfo,this)
 $.ajax({url:e,success:function(t){var e=s.Util.xmlToJson(t)
 OWF.Eventing.publish("graphData",e)},error:function(t,e,n){i(n)}})},getFeatureInfoUrl:function(t){function e(t){var e=t+""
 return 1===e.length&&(e="0"+e),e}var i=new Date,n=new Date

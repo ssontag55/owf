@@ -94,20 +94,38 @@ var MapView = Backbone.View.extend({
     OWF.Eventing.publish("leafletMapClick", evt);
   },
 
+  mapMarkerClick: function(mrker){
+    OWF.Eventing.publish("leafletmarkerClick",mrker);
+  },
+
   startOWF: function(){
     //Listeners to channels
     OWF.Eventing.subscribe("add2Map", function (sender, msg, channel) {
-                // == " Stations"
+                // this is for SOS services - right now we have to have the interaction (click)
+                // function for data in the map JS -- Not Ideal - change later
                 if(msg._layers){
-                  //msg.options.pointToLayer= mapView.addStation;
-                  //msg.options.onEachFeature = mapView.popUp;
-                  mapView.map.addLayer(msg);
+                  var markers = L.layerGroup();
+                  for (var i in msg._layers)
+                  {
+                      var marker = L.marker(msg._layers[i]._latlng, msg._layers[i].options);
+                      marker.bindPopup(msg._layers[i]._popup._content);
+                      marker.attributes = msg._layers[i].attributes;
+                      marker.on('click',mapView.mapMarkerClick);
+                      markers.addLayer(marker);
+                  }
+                  mapView.map.addLayer(markers);
+                }
+                //for GeoJSON
+                else if(msg.features){
+                  L.geoJson(msg.features).addTo(mapView.map);
                 }
                 //for WMS layers
                 else if(msg.wmsParams){
                     //for SAR layers
                     if(msg.wmsParams.SEARCHAREA){
-                      mapView.map.addLayer(L.tileLayer.sarWms(msg._url,msg.wmsParams));
+                      var lay= L.tileLayer.sarWms(msg._url,msg.wmsParams);
+                      lay.addTo(mapView.map);
+                      //mapView.map.addLayer(lay);
                     }
                     else{
                       mapView.map.addLayer(L.tileLayer.betterWms(msg._url,{id:msg.wmsParams.layers,layers:msg.wmsParams.layers,zIndex:msg.wmsParams.zIndex}));
@@ -124,12 +142,17 @@ var MapView = Backbone.View.extend({
         });
     OWF.Eventing.subscribe("removeFromMap", function (sender, msg, channel) {
                 if(msg.wmsParams){
-                  //I can't believe I have to fucking do this
+                  //I can't believe I have to do this
                   for(var l in mapView.map._layers){
                     if(mapView.map._layers[l].wmsParams && mapView.map._layers[l].wmsParams.layers == msg.wmsParams.layers){
                       mapView.map.removeLayer(mapView.map._layers[l]);
                     }
                   }
+                }
+                //remove geojson
+                else if(msg.features){
+                  //not working
+                  mapView.map.removeLayer(L.geoJson(msg.features));
                 }
                 //remove tileservices
                 else if(msg._url){
@@ -150,7 +173,17 @@ var MapView = Backbone.View.extend({
                   }
                 }
                 else{
-                  mapView.map.removeLayer(msg);
+                  for(var l in mapView.map._layers){
+                    if(mapView.map._layers[l]._popup){
+                      for(var gj in msg._layers){
+                        if(mapView.map._layers[l]){
+                          if(mapView.map._layers[l]._popup._content == msg._layers[gj]._popup._content){
+                            mapView.map.removeLayer(mapView.map._layers[l]);
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
         });
   },
@@ -158,7 +191,6 @@ var MapView = Backbone.View.extend({
   addLayertoMap: function(sender,msg){
     console.log(msg);
   },
-
 
   //drop down for NDBC observations
   changeObs: function(evt) {
@@ -489,5 +521,5 @@ var MapView = Backbone.View.extend({
       .attr('y', 9)
       .style('font-size', '1.5em')
       .text('W'); 
-  }
+  },
 });

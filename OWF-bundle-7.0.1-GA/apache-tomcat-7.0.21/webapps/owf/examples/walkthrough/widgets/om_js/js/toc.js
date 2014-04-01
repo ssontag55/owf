@@ -198,31 +198,31 @@ var LeftpanelView = Backbone.View.extend({
     //SAR Layer
     this.model.gislayers['Drifter Model'] = L.tileLayer.sarWms('http://map.asascience.com/EGDataViewer/Scripts/proxy.php?http://172.16.16.124/oilmapwebservice20/DrawModel.aspx?', {
         layers: 'model',
-		scenario_id:126,
-		OM_SPILLETS:true,
-		OM_CONTOUR:false,
-		lang:0,
-		transparent:true,
-		OM_SWEPT:true,
-		OM_TRACKLINE:false,
-		SEARCHAREA:true,
-		format:'image/png',
-		session_id:'15_alzm10677AL106',
-		PROBABILITYGRID:false,
-		DAYNIGHTICON:false,
-		SUMMARYTABLE:false,
-		user_id:15,
+		    scenario_id:126,
+    		OM_SPILLETS:true,
+    		OM_CONTOUR:false,
+    		lang:0,
+    		transparent:true,
+    		OM_SWEPT:true,
+    		OM_TRACKLINE:false,
+    		SEARCHAREA:true,
+    		format:'image/png',
+    		session_id:'15_alzm10677AL106',
+    		PROBABILITYGRID:false,
+    		DAYNIGHTICON:false,
+    		SUMMARYTABLE:false,
+    		user_id:15,
         time:'2014-03-30T16:40:00',
-        zIndex:30
+        zIndex:3000
       });
     bindlistele('Drifter Model', '<p style="text-align:center;"><p style="text-align:center;"></p>');
     
     // add arc gis layer
-    this.model.gislayers['ArcGIS GIS Server'] = L.esri.dynamicMapLayer('http://gis.asascience.com/ArcGIS/rest/services/oilmap/oceansmap/MapServer');
+    this.model.gislayers['ArcGIS GIS Server'] = L.esri.dynamicMapLayer('http://gis.asascience.com/ArcGIS/rest/services/oilmap/oceansmap/MapServer',{zIndex:4000});
     bindlistele('ArcGIS GIS Server', '<p style="text-align:center;"><p style="text-align:center;"><img src="../om_js/images/ags_legend.jpg" ></p>');
     
      //weather
-    this.model.gislayers['Current Precipitation'] = L.tileLayer('http://{s}.tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png', {visible:false,zIndex:10, opacity:.4, attribution: 'Map data © OpenWeatherMap'});
+    this.model.gislayers['Current Precipitation'] = L.tileLayer('http://{s}.tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png', {visible:false,zIndex:1000, opacity:.4, attribution: 'Map data © OpenWeatherMap'});
     bindlistele('Current Precipitation', '<p style="text-align:center;">Current Quantity of precipitation Coverage : provided by Open Weather Map<p style="text-align:center;"><img src="../om_js/images/PR.png" ></p>');
   },
 

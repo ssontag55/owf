@@ -75,6 +75,16 @@ var GraphView = Backbone.View.extend({
     OWF.Eventing.subscribe("graphData", function (sender, msg, channel) {
                  graphView.formatleaflettograph(msg);
              });
+    OWF.Eventing.subscribe("graphQueryStart", function (sender, msg, channel) {
+                 graphView.showQuerying();
+             });
+    OWF.Eventing.subscribe("graphSOSData", function (sender, msg, channel) {
+                 
+                 graphView.formatndbctograph(msg);
+             });
+    OWF.Eventing.subscribe("clearGraphData", function (sender, msg, channel) {
+                 graphView.cleargraphdata();
+             });
   },
 
   togglebottomgraph: function() {
@@ -127,6 +137,12 @@ var GraphView = Backbone.View.extend({
     this.$tabs.fadeOut();
   },
 
+  //for GetFeature Info this will add loading bar to graph
+  showQuerying: function() {
+    this.$loader.fadeIn();
+    this.$svg.fadeOut();
+  },
+
   showloading: function() {
     var that = this;
 
@@ -173,16 +189,29 @@ var GraphView = Backbone.View.extend({
   },
 
   drawbottomgraph: function() {
+
+    this.$svg.fadeIn();
+    this.$loader.fadeOut();
+
     // setup graphs
     var activetab = this.model.get('activetab')
       , datum;
 
     var justForecast = false;
+    var columns = [];
     if (this.graphdata[activetab]){
       datum = this.graphdata[activetab];
+      columns.push(
+        datum[0],
+        datum[1]
+      );
       //if (this.model.get('state') == 'hidden')
         //this.togglebottomgraph();
     } 
+    else if(this.graphdata){
+      $('#c3graph').empty();
+      return;
+    }
     /*else if(this.winddata){
       datum = this.winddata;
       this.model.set('activetab', 'winds');
@@ -224,8 +253,7 @@ var GraphView = Backbone.View.extend({
       }
     }
 
-    var chart
-      , columns = [];
+    var chart;
 
     if((activetab == 'winds') && (this.winddata)) {
       columns.push(
@@ -269,6 +297,10 @@ var GraphView = Backbone.View.extend({
 
     var unitVal = datum[2];
 
+    if(columns.length == 0 && justForecast == true){
+      $('#c3graph').empty();
+      return;
+    }
     chart = c3.generate({
       bindto: '#c3graph',
       size: {
@@ -315,8 +347,6 @@ var GraphView = Backbone.View.extend({
       }
     });
 
-    this.$svg.fadeIn();
-    this.$loader.fadeOut();
   },
 
   cleargraphdata: function() {
